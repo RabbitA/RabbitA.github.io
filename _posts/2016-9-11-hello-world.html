@@ -15,12 +15,10 @@
 <body>
 <p class="p1"><span class="s1">—</span></p>
 <p class="p1"><span class="s1">layout: default</span></p>
-<p class="p1"><span class="s1">title: index</span></p>
+<p class="p1"><span class="s1">title: Hello! This is my first post!</span></p>
 <p class="p1"><span class="s1">—</span></p>
 <p class="p1"><span class="s1">{{page.title}}</span></p>
-<p class="p2"><span class="s1">最新文章</span></p>
-<p class="p2"><span class="s1">{％for post in site.posts％}</span></p>
-<p class="p2"><span class="s1">{{post.date|date_to_string}}{{post.title}}</span></p>
-<p class="p2"><span class="s1">{%endfor%}</span></p>
+<p class="p2"><span class="s1">我的第一篇文章</span></p>
+<p class="p2"><span class="s1">{{page.date|date_to_string}}</span></p>
 </body>
 </html>
