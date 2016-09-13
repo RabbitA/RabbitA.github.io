@@ -70,8 +70,8 @@ iLotus:
   begin: 2011
 
 #站点基础配置
-title: RabbitA
-subTitle: Blog of interesting stuff
+title: RabbitA's Blog
+subTitle: Filled with Interesting Stuff
 description: 
 url: 
 feed: /feed.xml
