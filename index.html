@@ -17,7 +17,7 @@ keywords: GitHub, Jekyll, Plugins, Works, Archives, CSS, HTML, javascript, wordp
     <article class="article article-first">
     <h3>最新文章</h3>
         <ul>
-            {% for newpost in site.posts limit:3 offset:2   %}
+            {% for newpost in site.posts limit:4 offset:2   %}
             <li><a href="{{ newpost.url }}" pubdate="{{ newpost.date | date_to_utc | date: '%Y-%m-%d' }}" title="{{ newpost.title }}" rel="bookmark">{{ newpost.title }}</a></li>
             {% endfor %}
         </ul>
