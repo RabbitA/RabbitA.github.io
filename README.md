@@ -1,2 +1,2 @@
 # RabbitA.github.io
-# This is a test blog
+This is a test blog
