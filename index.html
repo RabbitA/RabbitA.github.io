@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<br>
 Total Posts: {{paginator.total_posts}}<br>
 Recently Post:
   <ul>
@@ -8,7 +9,8 @@ Recently Post:
       <li>
         <span>{{ post.date | date: "%b %d, %Y" }}</span>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
-        {{post.excerpt}}
+        {{post.excerpt}}<!--summary-->
       </li>
     {% endfor %}
   </ul>
+<br>
