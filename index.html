@@ -7,11 +7,11 @@ Recently Post:
   <ul>
     {% for post in site.posts limit:5 %}
       <li>
-      	<div style="border-top:3px dotted #84d9fb;margin-top:20px;padding-top:20px">
+      	<div style="border-top:3px none #84d9fb;margin-top:20px;padding-top:20px">
           <span style="color:#c91b0c">{{ post.date | date: "%b %d, %Y" }}</span>
           <span>&#9997;</span>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
-          {{post.excerpt}}<!--summary-->
+          <div style="background:#E0E5EB;padding:10px;border-radius:5px"><span>{{post.excerpt}}</span></div><!--summary-->
         </div>
       </li>
     {% endfor %}
