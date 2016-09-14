@@ -10,8 +10,9 @@ bg: black
           <span style="color:#c91b0c">{{ post.date | date: "%b %d, %Y" }}</span>
           <span>&#9997;</span>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
-          <div style="background:#E0E5EB;padding:10px;border-radius:5px"><span>{{post.excerpt}}</span></div><!--summary-->
+          <div style="background:#f1f1f1;padding:10px;border-radius:5px"><span>{{post.excerpt}}</span></div><!--summary-->
         </div>
       </li>
     {% endfor %}
   </ul>
+  #E0E5EB
