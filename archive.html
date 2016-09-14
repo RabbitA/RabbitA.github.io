@@ -6,7 +6,7 @@ layout: default
   <ul style="border-left:1px dashed #e25362">
     {% for post in site.posts %}
       <li style="list-style-type:none">
-      	<span style="color:#e25362">&lfloor;</span>
+      	<span style="color:#e25362">-</span>
         <span>{{ post.date | date: "%b %d, %Y" }}</span>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
       </li>
