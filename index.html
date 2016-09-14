@@ -8,7 +8,7 @@ Recently Post:
     {% for post in site.posts limit:5 %}
       <li>
       	<div style="border-bottom:3px dotted #84d9fb;margin-bottom:20px">
-          <span>{{ post.date | date: "%b %d, %Y" }}</span>
+          <span style="color:#c91b0c">{{ post.date | date: "%b %d, %Y" }}</span>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
           {{post.excerpt}}<!--summary-->
         </div>
