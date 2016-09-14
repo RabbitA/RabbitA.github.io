@@ -1,9 +1,10 @@
 ---
 layout: default
 ---
-
+Total Posts: {{paginator.total_posts}}<br>
+Recently Post:
   <ul>
-    {% for post in site.posts limit:3 %}
+    {% for post in site.posts limit:5 %}
       <li>
         <span>{{ post.date | date: "%b %-d, %Y" }}</span>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
