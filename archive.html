@@ -4,7 +4,7 @@ layout: default
 <br>
 Total Posts: {{paginator.total_posts}}<br>
 Archive:
-  <ul>
+  <ul style="list-style-type:none">
     {% for post in site.posts %}
       <li>
         <span>{{ post.date | date: "%b %d, %Y" }}</span>
