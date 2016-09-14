@@ -5,14 +5,13 @@
 	|
 	<a style="color:red" href="{{site.url}}/archive.html">Archive</a>
 	|
-	<a style="color:red" href="{{site.url}}/about.html">About</a>
+	<a style="color:red" href="{{site.url}}/about.html" onclick="msg(hi)">About</a>
 	|
 	<a style="color:red" href="{{site.url}}/contact.html">Contact</a>
 	</div>
 
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="js/jquery.min.js">
 $(function () {
 var	nav= $('#nav');
 nav.attr('otop', dv.offset().top); //存储原来的距离顶部的距离
