@@ -5,7 +5,7 @@
 	|
 	<a style="color:red" href="{{site.url}}/archive.html">Archive</a>
 	|
-	<a style="color:red" href="{{site.url}}/about.html">About</a>
+	<a style="color:red" href="{{site.url}}/about.html" onclick="disp_alert()">About</a>
 	|
 	<a style="color:red" href="{{site.url}}/contact.html">Contact</a>
 	</div>
@@ -24,6 +24,13 @@ if (nav.css('position') != 'fixed') nav.css({ 'position': 'fixed', top:0});
 });
 </script>
 
+<script type="text/javascript">
+function disp_alert() //弹出消息，onclick＝“disp_alert()”调用
+{
+alert("Currently Under Construction")
+}
+document.write(navigator.appName+navigator.appVersion)
+</script>
 
 
 
