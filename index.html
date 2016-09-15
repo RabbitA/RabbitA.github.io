@@ -4,7 +4,7 @@ bg: black
 ---
 <div style="text-align: center;color:#e25362;border-bottom:1px dashed #e25362">Recently Post:</div>
 <ul>
-{% for post in site.posts limit:5 %}
+{%- for post in site.posts limit:5 -%}
   <li>
   	<div style="border-top:3px none #84d9fb;margin-top:20px;padding-top:20px">
       <span style="color:#c91b0c">{{ post.date | date: "%b %d, %Y" }}</span>
@@ -13,7 +13,7 @@ bg: black
       <div style="background:#f1f1f1;padding:10px;border-radius:5px"><span>{{post.excerpt}}</span></div><!--summary-->
     </div>
   </li>
-{% endfor %}
+{%- endfor -%}
 </ul>
 
 
