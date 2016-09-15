@@ -3,16 +3,26 @@ layout: default
 bg: black
 ---
 <div style="text-align: center;color:#e25362;border-bottom:1px dashed #e25362">Recently Post:</div>
-  <ul>
-    {% for post in site.posts limit:5 %}
-      <li>
-      	<div style="border-top:3px none #84d9fb;margin-top:20px;padding-top:20px">
-          <span style="color:#c91b0c">{{ post.date | date: "%b %d, %Y" }}</span>
-          <span>&#9997;</span>
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
-          <div style="background:#f1f1f1;padding:10px;border-radius:5px"><span>{{post.excerpt}}</span></div><!--summary-->
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-  
+<ul>
+{% for post in site.posts limit:5 %}
+  <li>
+  	<div style="border-top:3px none #84d9fb;margin-top:20px;padding-top:20px">
+      <span style="color:#c91b0c">{{ post.date | date: "%b %d, %Y" }}</span>
+      <span>&#9997;</span>
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+      <div style="background:#f1f1f1;padding:10px;border-radius:5px"><span>{{post.excerpt}}</span></div><!--summary-->
+    </div>
+  </li>
+{% endfor %}
+</ul>
+
+
+<script language="JavaScript"> //检测ip
+VIH_BackColor = "";
+VIH_ForeColor = "#e25362";
+//VIH_FontPix = "16";
+VIH_DisplayFormat = "IP: %%IP%%";
+//VIH_DisplayFormat = "IP: %%IP%% Host: %%HOST%%";
+VIH_DisplayOnPage = "yes";
+</script>
+<script language="JavaScript" src="//scripts.hashemian.com/js/visitorIPHOST.js.php"></script>
