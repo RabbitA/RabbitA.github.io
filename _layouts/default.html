@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	{% include head.html %}
+	{% include head.html %}	
 <body>
 	<div style="text-align:center">
 		{% include header.html %}
@@ -16,5 +16,25 @@
 	{% include footer.html %}
 	<div>
 </body>
+
+
+<script type="text/javascript"> //导航固定代码
+	function menuFixed(nav){ 
+var obj = document.getElementById(id); 
+var _getHeight = obj.offsetTop; 
+window.onscroll = function(){ 
+changePos(id,_getHeight); 
+} 
+} 
+function changePos(nav,height){ 
+var obj = document.getElementById(id); 
+var scrollTop = document.documentElement.scrollTop || document.body.scrollTop; 
+if(scrollTop < height){ 
+obj.style.position = 'relative'; 
+}else{ 
+obj.style.position = 'fixed'; 
+} 
+} 
+</script>
 
 </html>

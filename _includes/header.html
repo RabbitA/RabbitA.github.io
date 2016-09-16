@@ -11,27 +11,12 @@
 	</div>
 
 
-<script type="text/javascript" src="js/jquery.min.js">
-$(function () {
-var	nav= $('#nav');
-nav.attr('otop', dv.offset().top); //存储原来的距离顶部的距离
-$(window).scroll(function () {
-st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);
-if (st >= parseInt(nav.attr('otop'))) {
-if (nav.css('position') != 'fixed') nav.css({ 'position': 'fixed', top:0});
-}else if (nav.css('position') != 'static') nav.css({ 'position': 'static' });
-});
-});
-</script>
-
 <script type="text/javascript">
 function disp_alert() //弹出消息，onclick＝“disp_alert()”调用
 {
 alert("Currently Under Construction")
 }
 </script>
-
-
 
 
 

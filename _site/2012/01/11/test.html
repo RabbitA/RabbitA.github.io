@@ -16,7 +16,7 @@
   
   
 </head>
-
+	
 <body>
 	<div style="text-align:center">
 		<header style="background:#e25362">
@@ -32,27 +32,12 @@
 	</div>
 
 
-<script type="text/javascript" src="js/jquery.min.js">
-$(function () {
-var	nav= $('#nav');
-nav.attr('otop', dv.offset().top); //存储原来的距离顶部的距离
-$(window).scroll(function () {
-st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);
-if (st >= parseInt(nav.attr('otop'))) {
-if (nav.css('position') != 'fixed') nav.css({ 'position': 'fixed', top:0});
-}else if (nav.css('position') != 'static') nav.css({ 'position': 'static' });
-});
-});
-</script>
-
 <script type="text/javascript">
 function disp_alert() //弹出消息，onclick＝“disp_alert()”调用
 {
 alert("Currently Under Construction")
 }
 </script>
-
-
 
 
 
@@ -166,7 +151,7 @@ var disqus_config = function () {
 	<span>-> Made with </span>
 	<span style="color:red">&hearts;</span>
 	<span> By RabbitA's Blog <-</span><br>
-	<small>Today's Date: Sep 15, 2016</small>
+	<small>Today's Date: Sep 16, 2016</small>
 </footer>
 
 <small><script type="text/javascript"> //检测浏览器
@@ -178,5 +163,25 @@ document.write("Visitor's System: "+navigator.platform+"-"+navigator.appName+"-"
 <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=rabbits.github.io&digit=style/plain/34/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">Download 3d STL files</a>
 	<div>
 </body>
+
+
+<script type="text/javascript"> //导航固定代码
+	function menuFixed(nav){ 
+var obj = document.getElementById(id); 
+var _getHeight = obj.offsetTop; 
+window.onscroll = function(){ 
+changePos(id,_getHeight); 
+} 
+} 
+function changePos(nav,height){ 
+var obj = document.getElementById(id); 
+var scrollTop = document.documentElement.scrollTop || document.body.scrollTop; 
+if(scrollTop < height){ 
+obj.style.position = 'relative'; 
+}else{ 
+obj.style.position = 'fixed'; 
+} 
+} 
+</script>
 
 </html>
