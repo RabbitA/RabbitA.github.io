@@ -3,6 +3,9 @@ layout: default
 bg: black
 ---
 
+<div id="test">Hi</div>
+<script type="text/javascript" src="{{site.url}}/script.js"></script>
+
 <div style="text-align: center;color:#e25362;border-bottom:1px solid #f1f1f1">Recently Post:</div>
 <ul>
 {% for post in site.posts limit:5 %}
@@ -17,6 +20,7 @@ bg: black
 {% endfor %}
 </ul>
 <div style="text-align:center"><a style="color:#e25362" href="{{site.url}}/archive.html">Read More</a></div>
+
 
 <script language="JavaScript"> //检测ip
 VIH_BackColor = "";
