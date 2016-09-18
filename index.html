@@ -3,8 +3,19 @@ layout: default
 bg: black
 ---
 
-<div id="test">Hi</div>
-<script src="{{site.url}}/script.js"> document.write({{site.url}}/script.js)</script>
+<div id="test"><button onclick="test()">Test</button></div>
+<script type="text/javascript">
+var i=0;
+function test(){
+	var temp = new Date();
+	document.getElementById("test").innerHTML=temp.getHours()+":"+temp.getMinutes()+":"+temp.getSeconds();
+	i++;
+}
+setInterval(test,1000);
+</script>
+
+
+
 
 <div style="text-align: center;color:#e25362;border-bottom:1px solid #f1f1f1">Recently Post:</div>
 <ul>
