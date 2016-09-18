@@ -20,8 +20,8 @@
 <body>
 	<div style="text-align:center">
 		<header style="background:#e25362">
-	<a href="http://rabbita.github.io" ><h1 style="padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a>
-	<div id="nav" style="background:#f1f1f1;color:red;position:static;border-bottom:1px solid #fccdcf">
+	<div><a href="http://rabbita.github.io" ><h1 style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
+	<div style="position:fixed;top:0px;background:#f1f1f1;color:red;border-bottom:1px solid #fccdcf">
 	<a style="color:red" href="http://rabbita.github.io">Blog</a>
 	|
 	<a style="color:red" href="http://rabbita.github.io/archive.html">Archive</a>
@@ -37,6 +37,10 @@ function disp_alert() //弹出消息，onclick＝“disp_alert()”调用
 {
 alert("Currently Under Construction")
 }
+</script>
+
+<script type="text/javascript"> //使得nav保持在屏幕上侧
+	
 </script>
 
 
@@ -72,25 +76,3 @@ document.write("Visitor's System: "+navigator.platform+"-"+navigator.appName+"-"
 <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=rabbits.github.io&digit=style/plain/34/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">Download 3d STL files</a>
 	<div>
 </body>
-
-
-<script type="text/javascript"> //导航固定代码
-	function menuFixed(nav){ 
-var obj = document.getElementById(id); 
-var _getHeight = obj.offsetTop; 
-window.onscroll = function(){ 
-changePos(id,_getHeight); 
-} 
-} 
-function changePos(nav,height){ 
-var obj = document.getElementById(id); 
-var scrollTop = document.documentElement.scrollTop || document.body.scrollTop; 
-if(scrollTop < height){ 
-obj.style.position = 'relative'; 
-}else{ 
-obj.style.position = 'fixed'; 
-} 
-} 
-</script>
-
-</html>
