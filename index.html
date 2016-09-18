@@ -3,30 +3,6 @@ layout: default
 bg: black
 ---
 
-<div id="test" style="position:absolute;background:yellow;top:100px;right:10px"><button onclick="test()">Test</button></div>
-<script type="text/javascript">
-var i=0;
-function test(){
-	var temp = new Date();
-	document.getElementById("test").innerHTML=temp.getHours()+":"+temp.getMinutes()+":"+temp.getSeconds();
-	i++;
-	if(document.body.scrollTop>100){
-		document.getElementById("test").style.position="fixed";
-		document.getElementById("test").style.top="0px";
-	 } else {
-	 	document.getElementById("test").style.position="absolute";
-	 	document.getElementById("test").style.top="100px";
-	 }
-
-	//document.getElementById("test").style.top=document.body.scrollTop+"px";
-	document.getElementById("test").innerHTML=document.body.scrollTop;
-}
-setInterval(test,100);
-</script>
-
-
-
-
 <div style="text-align: center;color:#e25362;border-bottom:1px solid #f1f1f1">Recently Post:</div>
 <ul>
 {% for post in site.posts limit:5 %}
