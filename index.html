@@ -11,6 +11,7 @@ bg: black
       <span style="color:#c91b0c">{{ post.date | date: "%b %d, %Y" }}</span>
       <span>&#9997;</span>
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+      <span style="color:#b3b3b3">(Recently Posted)</span>
       <div style="background:#fff2f5;padding:10px;border-radius:5px;border:1px solid #f1e4f1"><span>{{post.excerpt}}</span></div><!--summary-->
     </div>
   </li>
