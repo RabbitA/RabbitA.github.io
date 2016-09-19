@@ -76,16 +76,14 @@ function moveUp(){
 	}
 }
 function RunmoveUp(){
-	var cycle=200;
 	var timer=setInterval(function(){
-  		if (cycle<1) {
+  		if (document.body.scrollTop<50) {
+  			moveUp();//final movement
   	  		clearInterval(timer);
-   		alert("cycle finished");
+   			//alert("move finished");
  		} else {
- 	    //alert(cycle);
     		moveUp();
   		}
- 	cycle=cycle-1;
 },10);}
 </script>
 
