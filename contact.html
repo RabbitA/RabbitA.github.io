@@ -22,14 +22,17 @@ layout: default
 		alert("hi~its loaded");
 	}
 	
-	function changePic(){
+	function changePic(n){ //n个图片, 1~n.jpg 命名
 		var i=1;
 		var timer=setInterval(function(){
 			document.getElementById("img").src="{{site.url}}/img/"+i+".jpg"
 			i++;
+			if(i>n){
+				i=1;
+			}
 		},4000);
 		//alert(i+".jpg");
 	}
-	changePic();
+	changePic(5);
 
 </script>
