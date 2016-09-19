@@ -74,15 +74,15 @@ alert("Currently Under Construction");
 </script>
 
 <script type="text/javascript"> //header淡入淡出
-	document.getElementById("header").style.opacity=0;
+	document.getElementById("posts").style.opacity=0;
 
 	function RunfadeIn(){
 		var timer1=setInterval(function(){
-			var x=document.getElementById("header").style.opacity;
+			var x=document.getElementById("posts").style.opacity;
 			if(x<1) {
 				var x=parseFloat(x);
 				x=x+0.1;
-				document.getElementById("header").style.opacity=x;
+				document.getElementById("posts").style.opacity=x;
 			} else {
 				clearInterval(timer1);
 			}

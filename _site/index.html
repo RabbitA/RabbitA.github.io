@@ -74,15 +74,15 @@ alert("Currently Under Construction");
 </script>
 
 <script type="text/javascript"> //header淡入淡出
-	document.getElementById("header").style.opacity=0;
+	document.getElementById("posts").style.opacity=0;
 
 	function RunfadeIn(){
 		var timer1=setInterval(function(){
-			var x=document.getElementById("header").style.opacity;
+			var x=document.getElementById("posts").style.opacity;
 			if(x<1) {
 				var x=parseFloat(x);
 				x=x+0.1;
-				document.getElementById("header").style.opacity=x;
+				document.getElementById("posts").style.opacity=x;
 			} else {
 				clearInterval(timer1);
 			}
@@ -117,7 +117,7 @@ function RunmoveUp(){
 	<br>
 	<main>
 		<article style="padding:12px;margin:12px;text-align:left;outline:white dotted">
-			<div style="margin-right:1%;margin-top:-30px;">
+			<div id="posts" style="margin-right:1%;margin-top:-30px;opacity:0;">
 <ul style="list-style-type:square">
 
   <li>
@@ -319,24 +319,6 @@ Markdown 使用 email 形式的區塊引言
 <a style="color:#ff9e9c" href="http://rabbita.github.io/archive.html">Read More </a>
 <span style="color:#ff9e9c">&#9660;</span>
 </div>
-
-<script type="text/javascript">
-// document.body.scrollTop=0;
-// function move(){
-// 	document.body.scrollTop=document.body.scrollTop+10;
-// }
-// var cycle=30;
-// var timer=setInterval(function(){
-//   if (cycle<1) {
-//     clearInterval(timer);
-//     alert("cycle finished");
-//   } else {
-//     //alert(cycle);
-//     move();
-//   }
-//   cycle=cycle-1;
-// },10);
-</script>
 
 
 <script language="JavaScript"> //检测ip
