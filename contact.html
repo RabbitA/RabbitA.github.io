@@ -16,7 +16,6 @@ layout: default
 	function imgWH() {
 		document.getElementById("imgBox").style.height=document.getElementById("imgBox").offsetWidth+"px";
 		var a=document.getElementById("imgBox").style.offsetWidth;
-		//document.getElementById("windowBox").style.height=document.getElementById("imgBox").offsetWidth+"px";
 		//alert(a);
 	}
 	function t(){
@@ -24,12 +23,10 @@ layout: default
 	}
 	
 	function changePic(){
-		//for(var i=1;i<3;i++){
-			//document.getElementById("img").src="{{site.url}}/img/"+i+".jpg"
-			//document.getElementById("img").src="{{site.url}}/img/2"+".jpg"
-			//document.getElementById("img").src="http://rabbita.github.io/img/3.jpg";
-		}
+		alert("functon called");
+			var i = 4;
+			document.getElementById("img").src="{{site.url}}/img/"+i+".jpg"
 	}
-	setInterval(changePic,8000);
+	setInterval(changePic,3000);
 
 </script>
