@@ -23,10 +23,13 @@ layout: default
 	}
 	
 	function changePic(){
-		alert("functon called");
-			var i = 4;
+		var i=1;
+		var timer=setInterval(function(){
 			document.getElementById("img").src="{{site.url}}/img/"+i+".jpg"
+			i++;
+		},3000);
+		//alert(i+".jpg");
 	}
-	setInterval(changePic,3000);
+	changePic();
 
 </script>
