@@ -21,7 +21,7 @@
 	<div style="text-align:center">
 		<header id="header" style="background:#fa5c5c;height:80px">
 	<a id="Goto1"></a><!--锚定点-->
-	<div><a href="http://rabbita.github.io" ><h1 style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
+	<div><a href="http://rabbita.github.io" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white;opacity:0">RabbitA's Blog &#9731;</h1></a></div>
 	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;color:red;border-bottom:1px solid #d3d1d3">
 	<a style="color:red" href="http://rabbita.github.io">Blog</a>
 	|
@@ -73,7 +73,40 @@ alert("Currently Under Construction");
 	}
 </script>
 
-<script type="text/javascript"> //header淡入淡出
+<script type="text/javascript"> //滚动播放header标题
+	document.getElementById("siteTitle").style.opacity=0;
+	alert("hihihi");
+
+	function changeTitle(title,id) { //改变标题函数
+		document.getElementById(id).innerHTML=title;
+		document.getElementById(id).style.opacity=0;
+	}
+
+	function fadeIn(id){ //淡入函数
+		var timer2=setInterval(function(){
+			var x2=document.getElementById(id).style.opacity;
+			if(x2<1) {
+				var x2=parseFloat(x2);
+				x2=x2+0.05;
+				document.getElementById("siteTitle").style.opacity=x2;
+			} else {
+				clearInterval(timer2);
+				x2=0;
+			}
+			//alert(x2);
+		},10);
+	}
+
+	function cycle(){
+		setTimeout(changeTitle("Hi in here","siteTitle"),1000);
+		setTimeout(fadeIn("siteTitle"),1000);
+	}
+		// setTimeout(changeTitle("Hi","siteTitle"),1000);
+		// setTimeout(fadeIn("siteTitle"),1000);
+		cycle();
+</script>
+
+<script type="text/javascript"> //Posts淡入淡出
 	document.getElementById("posts").style.opacity=0;
 
 	function RunfadeIn(){
@@ -85,6 +118,7 @@ alert("Currently Under Construction");
 				document.getElementById("posts").style.opacity=x;
 			} else {
 				clearInterval(timer1);
+				x=0;
 			}
 			//alert(x);
 		},10);
@@ -319,6 +353,7 @@ Markdown 使用 email 形式的區塊引言
 <a style="color:#ff9e9c" href="http://rabbita.github.io/archive.html">Read More </a>
 <span style="color:#ff9e9c">&#9660;</span>
 </div>
+
 
 
 <script language="JavaScript"> //检测ip

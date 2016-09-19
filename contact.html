@@ -4,7 +4,7 @@ layout: default
 
 <div id="windowBox" style="background:white;width:100%;height:600px">
 	<div id="imgBox" style="background:red;width:40%;height:100%;margin-left:3%;border-radius:5px;border:1px solid black;float:left">
-		<img id="img" src="{{site.url}}/img/1.jpg" style="width:100%;height:100%;border-radius:5px"/><!--图片框-->
+		 <img id="img" src="{{site.url}}/img/2.jpg" style="width:100%;height:100%;border-radius:5px"/><!--图片框 -->
 	</div>
 	<div style="background:#fff2f5;width:50%;height:100%;margin-left:3%;float:left;border-radius:5px;border:1px solid #f1e4f1">
 		<a href="mailto:jiachenma@foxmail.com?subject=ReplyForBlog&cc=sample@hotmail.com&body=Hi RabbitA," onclick="msg()">Send Me an Email</a><!--描述框-->
@@ -19,10 +19,15 @@ layout: default
 		//document.getElementById("windowBox").style.height=document.getElementById("imgBox").offsetWidth+"px";
 		//alert(a);
 	}
-	function t(){alert("hi~its loaded");}
+	function t(){
+		alert("hi~its loaded");
+	}
+	
 	function changePic(){
-		for(var i=1;i<9;i++){
-			document.getElementById("img").src="{{site.url}}/img/"+i+".jpg"
+		//for(var i=1;i<3;i++){
+			//document.getElementById("img").src="{{site.url}}/img/"+i+".jpg"
+			//document.getElementById("img").src="{{site.url}}/img/2"+".jpg"
+			//document.getElementById("img").src="http://rabbita.github.io/img/3.jpg";
 		}
 	}
 	setInterval(changePic,8000);

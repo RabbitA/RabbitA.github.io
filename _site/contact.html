@@ -21,7 +21,7 @@
 	<div style="text-align:center">
 		<header id="header" style="background:#fa5c5c;height:80px">
 	<a id="Goto1"></a><!--锚定点-->
-	<div><a href="http://rabbita.github.io" ><h1 style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
+	<div><a href="http://rabbita.github.io" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white;opacity:0">RabbitA's Blog &#9731;</h1></a></div>
 	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;color:red;border-bottom:1px solid #d3d1d3">
 	<a style="color:red" href="http://rabbita.github.io">Blog</a>
 	|
@@ -73,7 +73,40 @@ alert("Currently Under Construction");
 	}
 </script>
 
-<script type="text/javascript"> //header淡入淡出
+<script type="text/javascript"> //滚动播放header标题
+	document.getElementById("siteTitle").style.opacity=0;
+	alert("hihihi");
+
+	function changeTitle(title,id) { //改变标题函数
+		document.getElementById(id).innerHTML=title;
+		document.getElementById(id).style.opacity=0;
+	}
+
+	function fadeIn(id){ //淡入函数
+		var timer2=setInterval(function(){
+			var x2=document.getElementById(id).style.opacity;
+			if(x2<1) {
+				var x2=parseFloat(x2);
+				x2=x2+0.05;
+				document.getElementById("siteTitle").style.opacity=x2;
+			} else {
+				clearInterval(timer2);
+				x2=0;
+			}
+			//alert(x2);
+		},10);
+	}
+
+	function cycle(){
+		setTimeout(changeTitle("Hi in here","siteTitle"),1000);
+		setTimeout(fadeIn("siteTitle"),1000);
+	}
+		// setTimeout(changeTitle("Hi","siteTitle"),1000);
+		// setTimeout(fadeIn("siteTitle"),1000);
+		cycle();
+</script>
+
+<script type="text/javascript"> //Posts淡入淡出
 	document.getElementById("posts").style.opacity=0;
 
 	function RunfadeIn(){
@@ -85,6 +118,7 @@ alert("Currently Under Construction");
 				document.getElementById("posts").style.opacity=x;
 			} else {
 				clearInterval(timer1);
+				x=0;
 			}
 			//alert(x);
 		},10);
@@ -119,7 +153,7 @@ function RunmoveUp(){
 		<article style="padding:12px;margin:12px;text-align:left;outline:white dotted">
 			<div id="windowBox" style="background:white;width:100%;height:600px">
 	<div id="imgBox" style="background:red;width:40%;height:100%;margin-left:3%;border-radius:5px;border:1px solid black;float:left">
-		<img id="img" src="http://rabbita.github.io/img/1.jpg" style="width:100%;height:100%;border-radius:5px"/><!--图片框-->
+		 <img id="img" src="http://rabbita.github.io/img/2.jpg" style="width:100%;height:100%;border-radius:5px"/><!--图片框 -->
 	</div>
 	<div style="background:#fff2f5;width:50%;height:100%;margin-left:3%;float:left;border-radius:5px;border:1px solid #f1e4f1">
 		<a href="mailto:jiachenma@foxmail.com?subject=ReplyForBlog&cc=sample@hotmail.com&body=Hi RabbitA," onclick="msg()">Send Me an Email</a><!--描述框-->
@@ -134,10 +168,15 @@ function RunmoveUp(){
 		//document.getElementById("windowBox").style.height=document.getElementById("imgBox").offsetWidth+"px";
 		//alert(a);
 	}
-	function t(){alert("hi~its loaded");}
+	function t(){
+		alert("hi~its loaded");
+	}
+	
 	function changePic(){
-		for(var i=1;i<9;i++){
-			document.getElementById("img").src="http://rabbita.github.io/img/"+i+".jpg"
+		//for(var i=1;i<3;i++){
+			//document.getElementById("img").src="http://rabbita.github.io/img/"+i+".jpg"
+			//document.getElementById("img").src="http://rabbita.github.io/img/2"+".jpg"
+			//document.getElementById("img").src="http://rabbita.github.io/img/3.jpg";
 		}
 	}
 	setInterval(changePic,8000);
