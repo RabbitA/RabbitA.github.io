@@ -23,7 +23,7 @@ alert("Currently Under Construction");
 </script>
 
 
-<script type="text/javascript"> //使得nav保持在屏幕上侧, 初始化top 80px
+<script type="text/javascript"> //使得nav保持在屏幕上侧, 初始时 :top 为 80px
 	function navPosition() {
 		if(document.body.scrollTop>80){
 			document.getElementById("nav").style.position="fixed";
@@ -43,10 +43,29 @@ alert("Currently Under Construction");
 	window.onscroll=function(){
 		navPosition();
 	}
+	window.onload=function(){
+		RunfadeIn();
+	}
 </script>
 
+<script type="text/javascript"> //header淡入淡出
+	document.getElementById("header").style.opacity=0;
+	function RunfadeIn(){
+		var timer1=setInterval(function(){
+			var x=document.getElementById("header").style.opacity;
+			if(x<1) {
+				var x=parseFloat(x);
+				x=x+0.1;
+				document.getElementById("header").style.opacity=x;
+			} else {
+				clearInterval(timer1);
+			}
+			//alert(x);
+		},10);
+	}
+</script>
 
-<script type="text/javascript">
+<script type="text/javascript"> //平滑滚动
 document.body.scrollTop=0;
 function moveUp(){
 	if (document.body.scrollTop>50) {
@@ -63,7 +82,8 @@ function RunmoveUp(){
  		} else {
     		moveUp();
   		}
-},10);}
+	},10);
+}
 </script>
 
 </header>
