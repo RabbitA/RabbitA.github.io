@@ -21,7 +21,7 @@
 	<div style="text-align:center">
 		<header id="header" style="background:#fa5c5c;height:80px">
 	<a id="Goto1"></a><!--锚定点-->
-	<div><a href="http://rabbita.github.io" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white;opacity:0">RabbitA's Blog &#9731;</h1></a></div>
+	<div><a href="http://rabbita.github.io" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white;opacity:1">RabbitA's Blog &#9731;</h1></a></div>
 	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;color:red;border-bottom:1px solid #d3d1d3">
 	<a style="color:red" href="http://rabbita.github.io">Blog</a>
 	|
@@ -74,7 +74,7 @@ alert("Currently Under Construction");
 </script>
 
 <script type="text/javascript"> //滚动播放header标题
-	document.getElementById("siteTitle").style.opacity=0;
+	document.getElementById("siteTitle").style.opacity=1;
 
 	function changeTitle(title,id) { //改变标题函数
 		document.getElementById(id).innerHTML=title;
@@ -96,13 +96,23 @@ alert("Currently Under Construction");
 		},10);
 	}
 
-	function cycle(){
-		setTimeout(changeTitle("Hi in here","siteTitle"),1000);
-		setTimeout(fadeIn("siteTitle"),1000);
+
+	function cycle(msg){ //Array()存储到欢迎信息
+		var i=0
+		var timer=setInterval(function(){
+			if(i<msg.length){
+				//alert(msg[i]);
+				changeTitle(msg[i],"siteTitle");
+				fadeIn("siteTitle");
+				i++;
+			} else {
+				i=0;
+			}
+		},5000);
 	}
-		// setTimeout(changeTitle("Hi","siteTitle"),1000);
-		// setTimeout(fadeIn("siteTitle"),1000);
-		cycle();
+
+	var msg=["Hi there!","Welcome to my site.","Please feel free to look around.","I wish you enjoy yourself.","RabbitA's Blog &#9731;"];
+	setTimeout("cycle(msg)",2000);
 </script>
 
 <script type="text/javascript"> //Posts淡入淡出
