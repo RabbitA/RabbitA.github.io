@@ -17,7 +17,7 @@
   
 </head>
 	
-<body onresize="imgWH()">
+<body onresize="imgWH()" onload="imgWH()">
 	<div style="text-align:center">
 		<header style="background:#fa5c5c;height:80px">
 	<div id="banner"><a href="http://rabbita.github.io" ><h1 style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
@@ -98,7 +98,7 @@ setInterval(test,10);
 	</div>
 </div>
 
-<script type="text/javascript"> 　//保持图片为正方形
+<script type="text/javascript"> 　//保持图片为正方形, 触发写在body里的onresize
 
 	function imgWH() {
 		document.getElementById("imgBox").style.height=document.getElementById("imgBox").offsetWidth+"px";
@@ -106,7 +106,7 @@ setInterval(test,10);
 		//document.getElementById("windowBox").style.height=document.getElementById("imgBox").offsetWidth+"px";
 		//alert(a);
 	}
-	//setInterval(imgWH,1000);
+
 </script>
 		</article>
 	</main>
