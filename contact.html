@@ -13,15 +13,16 @@ layout: default
 </div>
 
 <script type="text/javascript"> 　//保持图片为正方形, 触发写在body里的onresize, onload
-
 	function imgWH() {
 		document.getElementById("imgBox").style.height=document.getElementById("imgBox").offsetWidth+"px";
 		var a=document.getElementById("imgBox").style.offsetWidth;
 		//document.getElementById("windowBox").style.height=document.getElementById("imgBox").offsetWidth+"px";
 		//alert(a);
 	}
+	function t(){alert("hi~its loaded");}
 	window.onload=function(){
 		imgWH();
+		t();
 	}
 
 </script>
