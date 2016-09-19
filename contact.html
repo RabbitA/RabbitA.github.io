@@ -12,7 +12,7 @@ layout: default
 	</div>
 </div>
 
-<script type="text/javascript"> 　//保持图片为正方形, 触发写在body里的onresize, onload
+<script type="text/javascript"> 　//保持图片为正方形, 触发写在onresize, 本窗口的onload
 	function imgWH() {
 		document.getElementById("imgBox").style.height=document.getElementById("imgBox").offsetWidth+"px";
 		var a=document.getElementById("imgBox").style.offsetWidth;
@@ -23,6 +23,9 @@ layout: default
 	window.onload=function(){
 		imgWH();
 		t();
+	}
+	window.onresize=function(){
+		imgWH();
 	}
 
 </script>
