@@ -33,7 +33,7 @@
 	</div>
 
 	<div id="buttonTop" style="position:fixed;bottom:5%;right:5%;width:50px;height:50px;display:none"> <!--回到顶上的小圆点按钮-->
-		<button onclick="location.href='#Goto1'" style="opacity:0.4;width:100%;height:100%;border-radius:25px;background:red;color:white;border:1px solid red;font-size:100%;text-align:center">&#9650;</button>
+		<button onclick="RunmoveUp()" style="opacity:0.4;width:100%;height:100%;border-radius:25px;background:red;color:white;border:1px solid red;font-size:100%;text-align:center">&#9650;</button>
 	</div>
 
 <script type="text/javascript">
@@ -67,21 +67,27 @@ alert("Currently Under Construction");
 </script>
 
 
-<script type="text/javascript"> //淡入淡出效果
-  	function t(){alert("hi~header is loader");}
-  	function fadeIn(){
-  		for(var i=0;i<100;i++){
-  			document.getElementById("header").style.opacity=i/100;
-  			//setTimeout(document.getElementById("header").style.opacity=i/100,10);
-  			//t();
+<script type="text/javascript">
+document.body.scrollTop=0;
+function moveUp(){
+	if (document.body.scrollTop>50) {
+		document.body.scrollTop=document.body.scrollTop-50;
+	} else {document.body.scrollTop=0;
+	}
+}
+function RunmoveUp(){
+	var cycle=200;
+	var timer=setInterval(function(){
+  		if (cycle<1) {
+  	  		clearInterval(timer);
+   		//alert("cycle finished");
+ 		} else {
+ 	    //alert(cycle);
+    		moveUp();
   		}
-  	}
-	// window.onload=function(){
-	// 	//fadeIn();
-	// }
-	window.onresize(fadeIn());
+ 	cycle=cycle-1;
+},10);}
 </script>
-
 
 </header>
 	<div>
