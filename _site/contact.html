@@ -66,11 +66,16 @@ alert("Currently Under Construction");
 	}
 	window.onload=function(){
 		RunfadeIn();
+		imgWH();
+	}
+		window.onresize=function(){
+		imgWH();
 	}
 </script>
 
 <script type="text/javascript"> //header淡入淡出
 	document.getElementById("header").style.opacity=0;
+
 	function RunfadeIn(){
 		var timer1=setInterval(function(){
 			var x=document.getElementById("header").style.opacity;
@@ -134,13 +139,6 @@ function RunmoveUp(){
 		for(var i=1;i<9;i++){
 			document.getElementById("img").src="http://rabbita.github.io/img/"+i+".jpg"
 		}
-	}
-	window.onload=function(){
-		imgWH();
-		t();
-	}
-	window.onresize=function(){
-		imgWH();
 	}
 	setInterval(changePic,8000);
 
