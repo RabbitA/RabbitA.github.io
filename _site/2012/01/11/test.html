@@ -59,7 +59,15 @@ alert("Currently Under Construction");
 	//setInterval(navPosition,10);
 </script>
 
-  <script type="text/javascript"> //淡入淡出效果
+
+<script type="text/javascript"> //控制下方回到顶部的小圆点
+	window.onscroll=function(){
+		navPosition();
+	}
+</script>
+
+
+<script type="text/javascript"> //淡入淡出效果
   	function t(){alert("hi~header is loader");}
   	function fadeIn(){
   		for(var i=0;i<100;i++){
@@ -72,12 +80,6 @@ alert("Currently Under Construction");
 	// 	//fadeIn();
 	// }
 	window.onresize(fadeIn());
-  </script>
-
-<script type="text/javascript"> //控制下方回到顶部的小圆点
-	window.onscroll=function(){
-		navPosition();
-	}
 </script>
 
 

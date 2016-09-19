@@ -59,7 +59,15 @@ alert("Currently Under Construction");
 	//setInterval(navPosition,10);
 </script>
 
-  <script type="text/javascript"> //淡入淡出效果
+
+<script type="text/javascript"> //控制下方回到顶部的小圆点
+	window.onscroll=function(){
+		navPosition();
+	}
+</script>
+
+
+<script type="text/javascript"> //淡入淡出效果
   	function t(){alert("hi~header is loader");}
   	function fadeIn(){
   		for(var i=0;i<100;i++){
@@ -72,12 +80,6 @@ alert("Currently Under Construction");
 	// 	//fadeIn();
 	// }
 	window.onresize(fadeIn());
-  </script>
-
-<script type="text/javascript"> //控制下方回到顶部的小圆点
-	window.onscroll=function(){
-		navPosition();
-	}
 </script>
 
 
@@ -88,7 +90,7 @@ alert("Currently Under Construction");
 		<article style="padding:12px;margin:12px;text-align:left;outline:white dotted">
 			<div id="windowBox" style="background:white;width:100%;height:600px">
 	<div id="imgBox" style="background:red;width:40%;height:100%;margin-left:3%;border-radius:5px;border:1px solid black;float:left">
-		<img onresize="alert('You have changed the size of the window')" src="http://rabbita.github.io/img/1.jpg" style="width:100%;height:100%;border-radius:5px"/><!--图片框-->
+		<img id="img" src="http://rabbita.github.io/img/1.jpg" style="width:100%;height:100%;border-radius:5px"/><!--图片框-->
 	</div>
 	<div style="background:#fff2f5;width:50%;height:100%;margin-left:3%;float:left;border-radius:5px;border:1px solid #f1e4f1">
 		<a href="mailto:jiachenma@foxmail.com?subject=ReplyForBlog&cc=sample@hotmail.com&body=Hi RabbitA," onclick="msg()">Send Me an Email</a><!--描述框-->
@@ -104,6 +106,11 @@ alert("Currently Under Construction");
 		//alert(a);
 	}
 	function t(){alert("hi~its loaded");}
+	function changePic(){
+		for(var i=1;i<9;i++){
+			document.getElementById("img").src="http://rabbita.github.io/img/"+i+"1.jpg"
+		}
+	}
 	window.onload=function(){
 		imgWH();
 		t();
@@ -111,6 +118,7 @@ alert("Currently Under Construction");
 	window.onresize=function(){
 		imgWH();
 	}
+	setInterval(changePic,2000);
 
 </script>
 		</article>
