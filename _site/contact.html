@@ -177,14 +177,12 @@ function RunmoveUp(){
 		//alert(a);
 	}
 	
-	function t(){
-		alert("hi~its loaded");
-	}
-	
 	function changePic(n){ //n个图片, 1~n.jpg 命名
 		var i=1;
 		var timer=setInterval(function(){
 			document.getElementById("img").src="http://rabbita.github.io/img/"+i+".jpg"
+			document.getElementById("img").style.opacity=0;
+			fadeIn("img");
 			i++;
 			if(i>n){
 				i=1;
