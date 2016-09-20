@@ -181,8 +181,8 @@ function RunmoveUp(){
 		var i=1;
 		var timer=setInterval(function(){
 			document.getElementById("img").src="http://rabbita.github.io/img/"+i+".jpg"
-			document.getElementById("img").style.opacity=0;
-			fadeIn2("img");
+			//document.getElementById("img").style.opacity=0;
+			//fadeIn2("img");
 			i++;
 			if(i>n){
 				i=1;
@@ -192,20 +192,20 @@ function RunmoveUp(){
 	}
 	changePic(5);
 
-		function fadeIn2(id){ //淡入函数
-		var timer3=setInterval(function(){
-			var x3=document.getElementById(id).style.opacity;
-			if(x3<1) {
-				var x3=parseFloat(x3);
-				x3=x3+0.05;
-				document.getElementById("siteTitle").style.opacity=x3;
-			} else {
-				clearInterval(timer3);
-				x3=0;
-			}
-			//alert(x2);
-		},10);
-	}
+	// function fadeIn2(id){ //淡入函数
+	// 	var timer3=setInterval(function(){
+	// 		var x3=document.getElementById(id).style.opacity;
+	// 		if(x3<1) {
+	// 			var x3=parseFloat(x3);
+	// 			x3=x3+0.05;
+	// 			document.getElementById("siteTitle").style.opacity=x3;
+	// 		} else {
+	// 			clearInterval(timer3);
+	// 			x3=0;
+	// 		}
+	// 		//alert(x2);
+	// 	},10);
+	// }
 
 </script>
 		</article>
