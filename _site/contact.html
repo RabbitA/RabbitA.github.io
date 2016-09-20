@@ -87,7 +87,7 @@ alert("Currently Under Construction");
 			if(x2<1) {
 				var x2=parseFloat(x2);
 				x2=x2+0.05;
-				document.getElementById("siteTitle").style.opacity=x2;
+				document.getElementById(id).style.opacity=x2;
 			} else {
 				clearInterval(timer2);
 				x2=0;
@@ -114,6 +114,7 @@ alert("Currently Under Construction");
 	var msg=["Hi there!","I'm RabbitA.","A programmer and an artist.","Welcome to my website.","Please feel free to look around.","I wish you enjoy yourself.","RabbitA's Blog &#9731;"];
 	setTimeout("cycle(msg,5000)",2000);
 </script>
+
 
 <script type="text/javascript"> //Posts淡入淡出
 	document.getElementById("posts").style.opacity=0;
@@ -181,8 +182,8 @@ function RunmoveUp(){
 		var i=1;
 		var timer=setInterval(function(){
 			document.getElementById("img").src="http://rabbita.github.io/img/"+i+".jpg"
-			//document.getElementById("img").style.opacity=0;
-			//fadeIn2("img");
+			document.getElementById("img").style.opacity=0;
+			fadeIn("img");
 			i++;
 			if(i>n){
 				i=1;
@@ -192,20 +193,6 @@ function RunmoveUp(){
 	}
 	changePic(5);
 
-	// function fadeIn2(id){ //淡入函数
-	// 	var timer3=setInterval(function(){
-	// 		var x3=document.getElementById(id).style.opacity;
-	// 		if(x3<1) {
-	// 			var x3=parseFloat(x3);
-	// 			x3=x3+0.05;
-	// 			document.getElementById("siteTitle").style.opacity=x3;
-	// 		} else {
-	// 			clearInterval(timer3);
-	// 			x3=0;
-	// 		}
-	// 		//alert(x2);
-	// 	},10);
-	// }
 
 </script>
 		</article>
