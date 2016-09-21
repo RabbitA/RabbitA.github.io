@@ -23,8 +23,7 @@ layout: default
 		var i=1;
 		var timer=setInterval(function(){
 			document.getElementById("img").src="{{site.url}}/img/"+i+".jpg"
-			document.getElementById("img").style.opacity=0;
-			fadeIn("img");
+			//fadeIn("img",0.1,0.8);
 			i++;
 			if(i>n){
 				i=1;

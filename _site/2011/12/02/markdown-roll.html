@@ -10,9 +10,9 @@
 
   
   
-  <link rel="stylesheet" href="http://rabbita.github.io/css/main.css">
-  <link rel="canonical" href="http://rabbita.github.io/2011/12/02/markdown-roll.html">
-  <link rel="alternate" type="application/rss+xml" title="RabbitA&#39;s Blog" href="http://rabbita.github.io/feed.xml">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="/2011/12/02/markdown-roll.html">
+  <link rel="alternate" type="application/rss+xml" title="RabbitA&#39;s Blog" href="/feed.xml">
   
   
 </head>
@@ -21,20 +21,33 @@
 	<div style="text-align:center">
 		<header id="header" style="background:#fa5c5c;height:80px">
 	<a id="Goto1"></a><!--锚定点-->
-	<div><a href="http://rabbita.github.io" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white;opacity:1">RabbitA's Blog &#9731;</h1></a></div>
+	<div><a href="" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
 	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;color:red;border-bottom:1px solid #d3d1d3">
-	<a style="color:red" href="http://rabbita.github.io">Blog</a>
+	<a style="" class="navLinkFocus nav" href="">Blog</a>
 	|
-	<a style="color:red" href="http://rabbita.github.io/archive.html">Archive</a>
+	<a style="" class="navLinkFocus" href="/archive.html">Archive</a>
 	|
-	<a style="color:red" href="http://rabbita.github.io/about.html" onclick="disp_alert()">About</a>
+	<a style="color:red" href="/about.html" onclick="disp_alert()">About</a>
 	|
-	<a style="color:red" href="http://rabbita.github.io/contact.html">Contact</a>
+	<a style="color:red" href="/contact.html">Contact</a>
 	</div>
 
 	<div id="buttonTop" style="position:fixed;bottom:5%;right:5%;width:50px;height:50px;display:none"> <!--回到顶上的小圆点按钮-->
 		<button onclick="RunmoveUp()" style="opacity:0.4;width:100%;height:100%;border-radius:25px;background:red;color:white;border:1px solid red;font-size:100%;text-align:center">&#9650;</button>
 	</div>
+
+<style type="text/css">
+	.nav{color:red;}
+	.navLinkFocus:hover{
+		background-color: #f25c5c;
+		padding:1px;
+		padding-left:2px;
+		padding-right:2px;
+		border-radius: 2px;
+		text-decoration: none;	
+		color: white;
+	}
+</style>
 
 <script type="text/javascript">
 function disp_alert() //弹出消息，onclick＝“disp_alert()”调用
@@ -65,7 +78,6 @@ alert("Currently Under Construction");
 		navPosition();
 	}
 	window.onload=function(){
-		RunfadeIn();
 		imgWH();
 	}
 		window.onresize=function(){
@@ -74,36 +86,79 @@ alert("Currently Under Construction");
 </script>
 
 <script type="text/javascript"> //滚动播放header标题
-	document.getElementById("siteTitle").style.opacity=1;
 
-	function changeTitle(title,id) { //改变标题函数
+	function changeContext(title,id) { //改变标题函数
 		document.getElementById(id).innerHTML=title;
-		document.getElementById(id).style.opacity=0;
 	}
 
-	function fadeIn(id){ //淡入函数
-		var timer2=setInterval(function(){
-			var x2=document.getElementById(id).style.opacity;
-			if(x2<1) {
-				var x2=parseFloat(x2);
-				x2=x2+0.05;
-				document.getElementById(id).style.opacity=x2;
-			} else {
-				clearInterval(timer2);
-				x2=0;
-			}
-			//alert(x2);
-		},10);
+	function fade(id,startOpacity,endOpacity){ //淡入淡出函数, example: fadeIn("test", 0.2, 0.8)
+		document.getElementById(id).style.opacity=startOpacity;
+		if(startOpacity<endOpacity){
+			//alert("preparing fade in");
+			var timer=setInterval(function(){
+				var x=document.getElementById(id).style.opacity;
+				if(x<endOpacity) {
+					var x=parseFloat(x);
+					x=x+0.05;
+					document.getElementById(id).style.opacity=x;
+				} else {
+					document.getElementById(id).style.opacity=endOpacity; //精确控制透明度为endOpacity
+					clearInterval(timer);
+					x=0;
+				}//alert("fade in, opacity="+x);
+			},10);
+		} else if(startOpacity>endOpacity){
+			//alert("preparing fade out");
+			var timer2=setInterval(function(){
+				var x2=document.getElementById(id).style.opacity;
+				if(x2>endOpacity){
+					var x2=parseFloat(x2);
+					x2=x2-0.05;
+					document.getElementById(id).style.opacity=x2;
+				} else {
+					document.getElementById(id).style.opacity=endOpacity;
+					clearInterval(timer2);
+					x2=0;
+				} //alert("fade out, opacity="+x2);
+			},10);
+		} else {}
 	}
 
+	function fadeIn(id,startOpacity,endOpacity){ //淡入淡出函数, example: fadeIn("test", 0.2, 0.8)
+		document.getElementById(id).style.opacity=startOpacity;
+			var timer=setInterval(function(){
+				var x=document.getElementById(id).style.opacity;
+				if(x<endOpacity) {
+					var x=parseFloat(x);
+					x=x+0.05;
+					document.getElementById(id).style.opacity=x;
+				}else{ clearInterval(timer);x=0;document.getElementById(id).style.opacity=endOpacity;}
+				},10);
+	}
 
-	function cycle(msg,delay){ //msg:Array()存储到欢迎信息, delay:int 延迟， 依赖于function changeTitle, fadeIn
+	function fadeOut(id,startOpacity,endOpacity){ //淡入淡出函数, example: fadeIn("test", 0.2, 0.8)
+		document.getElementById(id).style.opacity=startOpacity;
+			var timer=setInterval(function(){
+				var x=document.getElementById(id).style.opacity;
+				if(x>endOpacity) {
+					var x=parseFloat(x);
+					x=x-0.01;
+					document.getElementById(id).style.opacity=x;
+				}else{ clearInterval(timer);x=0;document.getElementById(id).style.opacity=endOpacity;}
+				},10);
+	}
+
+	function cycle(msg,delay){ //msg:Array()存储到欢迎信息, delay:int 文字间的间隔时间， 依赖于function changeTitle, fadeIn
 		var i=0
 		var timer=setInterval(function(){
 			if(i<msg.length){
 				//alert(msg[i]);
-				changeTitle(msg[i],"siteTitle");
-				fadeIn("siteTitle");
+				changeContext(msg[i],"siteTitle");
+				//alert("0->1");
+				//var aa=fadeOut("siteTitle",1,0);
+				var bb=fadeIn("siteTitle",0,1);
+				//alert("1->0");
+				//var aa=fadeOut("siteTitle",1,0);
 				i++;
 			} else {
 				i=0;
@@ -112,28 +167,9 @@ alert("Currently Under Construction");
 	}
 
 	var msg=["Hi there!","I'm RabbitA.","A programmer and an artist.","Welcome to my website.","Please feel free to look around.","I wish you enjoy yourself.","RabbitA's Blog &#9731;"];
-	setTimeout("cycle(msg,5000)",2000);
+	setTimeout("cycle(msg,4000)",10);
 </script>
 
-
-<script type="text/javascript"> //Posts淡入淡出
-	document.getElementById("posts").style.opacity=0;
-
-	function RunfadeIn(){
-		var timer1=setInterval(function(){
-			var x=document.getElementById("posts").style.opacity;
-			if(x<1) {
-				var x=parseFloat(x);
-				x=x+0.05;
-				document.getElementById("posts").style.opacity=x;
-			} else {
-				clearInterval(timer1);
-				x=0;
-			}
-			//alert(x);
-		},10);
-	}
-</script>
 
 <script type="text/javascript"> //平滑滚动
 document.body.scrollTop=0;
@@ -265,7 +301,7 @@ var disqus_config = function () {
 	<span>-> Made with </span>
 	<span style="color:red">&hearts;</span>
 	<span> By RabbitA's Blog <-</span><br>
-	<small>Today's Date: Sep 20, 2016</small>
+	<small>Today's Date: Sep 21, 2016</small>
 </footer>
 
 <small><script type="text/javascript"> //检测浏览器
