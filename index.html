@@ -3,7 +3,7 @@ layout: default
 bg: black
 ---
 
-<div id="posts" style="transition-duration:0.8s;margin-right:1%;margin-top:-30px;">
+<div id="posts" style="transition-duration:0.8s;margin-right:1%">
 <ul style="list-style-type:square">
 {% for post in site.posts limit:5 %}
   <li>
@@ -29,14 +29,12 @@ bg: black
 
 <!--Test Css+Js 淡入淡出-->
 <style type="text/css">
-.posts1{margin-top:20px;padding-top:20px;opacity: 0}
-.posts2{margin-top:20px;padding-top:20px;opacity: 1}
+.posts1{opacity: 0}
+.posts2{opacity: 1}
 </style>
 <script type="text/javascript">
   document.getElementById("posts").className="posts1";
-  setTimeout("document.getElementById('posts').className='posts2'",300);
-  var b= document.getElementByTag("li");
-  alert("Currently Under Construction");
+  setTimeout("document.getElementById('posts').className='posts2'",10);
 </script>
 
 
