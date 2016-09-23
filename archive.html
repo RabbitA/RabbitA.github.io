@@ -2,7 +2,7 @@
 layout: default
 ---
 <span style="color:#e25362">Published Posts: </span> {{site.posts | size}}
-<div style="border-radius:5px;background:#ffe4e4;border:1px solid #ffd0d0;">
+<div id="archive" style="transition-duration:0.8s">
 <div style="margin-left:5px;margin-right:5px;border-bottom:1px dashed red;color:#e25362">Archive:</div><!--archive-->
   <ul style="border-left:1px dashed #e25362"><!--Posts-->
     {% for post in site.posts %}
@@ -15,3 +15,13 @@ layout: default
   </ul>
   <br>
 </div>
+
+<!--Test Css+Js 淡入淡出-->
+<style type="text/css">
+.archive1{border-radius:5px;background:#ffe4e4;border:1px solid #ffd0d0;opacity: 0}
+.archive2{border-radius:5px;background:#ffe4e4;border:1px solid #ffd0d0;opacity: 1}
+</style>
+<script type="text/javascript">
+  document.getElementById("archive").className="archive1";
+  setTimeout("document.getElementById('archive').className='archive2'",300);
+</script>

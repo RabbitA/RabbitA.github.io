@@ -3,14 +3,11 @@ layout: default
 bg: black
 ---
 
-<div id="t" style="transition-duration:3s" class="t" >ddd</div>  
-
-
-<div style="margin-right:1%;margin-top:-30px;">
+<div id="posts" style="transition-duration:0.8s;margin-right:1%;margin-top:-30px;">
 <ul style="list-style-type:square">
 {% for post in site.posts limit:5 %}
   <li>
-  	<div style="border-top:3px none #84d9fb;margin-top:20px;padding-top:20px">
+  	<div>
       <span style="color:#c91b0c">{{ post.date | date: "%b %d, %Y" }}</span>
       <span>&#9997;</span>
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
@@ -32,14 +29,14 @@ bg: black
 
 <!--Test Css+Js 淡入淡出-->
 <style type="text/css">
-.t{color:green;background:white;position: absolute;left:100px;opacity: 1;}
-#t:hover{color:red;background: blue;left: 300px;opacity: 1;}
-.t1{color:red;background: blue;left: 300px;opacity: 0;}
+.posts1{margin-top:20px;padding-top:20px;opacity: 0}
+.posts2{margin-top:20px;padding-top:20px;opacity: 1}
 </style>
 <script type="text/javascript">
-  alert(document.getElementById("t").className);
-  document.getElementById("t").className="t1";
-  setTimeout("document.getElementById('t').className='t'",3000); //document.getElementById("t").className="t";
+  document.getElementById("posts").className="posts1";
+  setTimeout("document.getElementById('posts').className='posts2'",300);
+  var b= document.getElementByTag("li");
+  alert("Currently Under Construction");
 </script>
 
 

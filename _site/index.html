@@ -204,14 +204,11 @@ function RunmoveUp(){
 	<br>
 	<main>
 		<article style="padding:12px;margin:12px;text-align:left;outline:white dotted">
-			<div id="t" style="transition-duration:3s" class="t" >ddd</div>  
-
-
-<div style="margin-right:1%;margin-top:-30px;">
+			<div id="posts" style="transition-duration:0.8s;margin-right:1%;margin-top:-30px;">
 <ul style="list-style-type:square">
 
   <li>
-  	<div style="border-top:3px none #84d9fb;margin-top:20px;padding-top:20px">
+  	<div>
       <span style="color:#c91b0c">Jan 04, 2014</span>
       <span>&#9997;</span>
       <a href="/2014/01/04/iLotus.html">iLotus主题更新</a>
@@ -222,7 +219,7 @@ function RunmoveUp(){
   </li>
 
   <li>
-  	<div style="border-top:3px none #84d9fb;margin-top:20px;padding-top:20px">
+  	<div>
       <span style="color:#c91b0c">Nov 23, 2013</span>
       <span>&#9997;</span>
       <a href="/2013/11/23/GitHub.html">GitHub</a>
@@ -246,7 +243,7 @@ In June 2015, GitHub opened an office in Japan that is its first office outside 
   </li>
 
   <li>
-  	<div style="border-top:3px none #84d9fb;margin-top:20px;padding-top:20px">
+  	<div>
       <span style="color:#c91b0c">Dec 22, 2012</span>
       <span>&#9997;</span>
       <a href="/2012/12/22/111test.html">Who Do You Think You Are?</a>
@@ -257,7 +254,7 @@ In June 2015, GitHub opened an office in Japan that is its first office outside 
   </li>
 
   <li>
-  	<div style="border-top:3px none #84d9fb;margin-top:20px;padding-top:20px">
+  	<div>
       <span style="color:#c91b0c">Jan 11, 2012</span>
       <span>&#9997;</span>
       <a href="/2012/01/11/test.html">markdown 语法学习</a>
@@ -330,7 +327,7 @@ Markdown 使用 email 形式的區塊引言
   </li>
 
   <li>
-  	<div style="border-top:3px none #84d9fb;margin-top:20px;padding-top:20px">
+  	<div>
       <span style="color:#c91b0c">Dec 02, 2011</span>
       <span>&#9997;</span>
       <a href="/2011/12/02/markdown-roll.html">markdown 语法学习</a>
@@ -415,14 +412,14 @@ Markdown 使用 email 形式的區塊引言
 
 <!--Test Css+Js 淡入淡出-->
 <style type="text/css">
-.t{color:green;background:white;position: absolute;left:100px;opacity: 1;}
-#t:hover{color:red;background: blue;left: 300px;opacity: 1;}
-.t1{color:red;background: blue;left: 300px;opacity: 0;}
+.posts1{margin-top:20px;padding-top:20px;opacity: 0}
+.posts2{margin-top:20px;padding-top:20px;opacity: 1}
 </style>
 <script type="text/javascript">
-  alert(document.getElementById("t").className);
-  document.getElementById("t").className="t1";
-  setTimeout("document.getElementById('t').className='t'",3000); //document.getElementById("t").className="t";
+  document.getElementById("posts").className="posts1";
+  setTimeout("document.getElementById('posts').className='posts2'",300);
+  var b= document.getElementByTag("li");
+  alert("Currently Under Construction");
 </script>
 
 
