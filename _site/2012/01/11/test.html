@@ -23,13 +23,13 @@
 	<a id="Goto1"></a><!--锚定点-->
 	<div><a href="/index.html" class="headerText" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
 	<div id="nav" style="position:absolute;width:100%;top:80px;color:red;background:#f1f1f1;border-bottom:1px solid #d3d1d3">
-	<a style="color:red" class="navLink" href="/index.html">Blog</a>
-	<span class="navLink">|</span>
-	<a style="color:red" class="navLink" href="/archive.html">Archive</a>
-	<span class="navLink">|</span>
-	<a style="color:red" class="navLink" href="/about.html" onclick="disp_alert()">About</a>
-	<span class="navLink">|</span>
-	<a style="color:red" class="navLink" href="/contact.html">Contact</a>
+		<div class="navLink" style="left: 0%;"><a style="color:red" href="/index.html">Blog</a></div>
+
+		<div class="navLink" style="left: 25%"><a style="color:red" href="/archive.html">Archive</a></div>
+
+		<div class="navLink" style="left: 50%"><a style="color:red" href="/about.html" onclick="disp_alert()">About</a></div>
+
+		<div class="navLink" style="left: 75%"><a style="color:red" href="/contact.html">Contact</a></div>
 	</div>
 
 	<div id="buttonTop" style="position:fixed;bottom:5%;right:5%;width:50px;height:50px;display:none"> <!--回到顶上的小圆点按钮-->
@@ -41,15 +41,21 @@
 		text-decoration: none;
 	}
 	.navLink:hover{
-		background-color: gray;
+		background-color: pink;
 		opacity:0.5;
 		padding-top:1px;
-		padding-bottom: 1px;
+		padding-bottom: 100px;
 		border-radius: 2px;
 		border:0px solid #ffd0d0;
 		text-decoration: none;	
 		color: white;
 		transition-duration: 0.3s;
+	}
+	.navLink{
+		position: absolute;
+		width:25%;
+		background: #f1f1f1;
+		border-bottom:1px solid #d3d1d3;
 	}
 </style>
 
