@@ -21,14 +21,14 @@
 	<div style="text-align:center">
 		<header id="header" style="background:#fa5c5c;height:80px">
 	<a id="Goto1"></a><!--锚定点-->
-	<div><a href="" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
-	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;color:red;border-bottom:1px solid #d3d1d3">
-	<a style="" class="navLinkFocus nav" href="">Blog</a>
-	|
-	<a style="" class="navLinkFocus" href="/archive.html">Archive</a>
-	|
-	<a style="color:red" href="/about.html" onclick="disp_alert()">About</a>
-	|
+	<div><a href="" class="headerText" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
+	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;border-bottom:1px solid #d3d1d3">
+	<a style="" class="navLink" href="">Blog</a>
+	<span class="navLink">|</span>
+	<a style="" class="navLink" href="/archive.html">Archive</a>
+	<span class="navLink">|</span>
+	<a style="color:green" href="/about.html" onclick="disp_alert()">About</a>
+	<span class="navLink">|</span>
 	<a style="color:red" href="/contact.html">Contact</a>
 	</div>
 
@@ -37,15 +37,20 @@
 	</div>
 
 <style type="text/css">
-	.nav{color:red;}
-	.navLinkFocus:hover{
+	.headerText:hover{
+		text-decoration: none;
+	}
+	.navLink {
+		color:red;
+	}
+	.navLink:hover{
 		background-color: #f25c5c;
-		padding:1px;
-		padding-left:2px;
-		padding-right:2px;
+		padding-top:1px;
+		padding-bottom: 1px;
 		border-radius: 2px;
 		text-decoration: none;	
 		color: white;
+		transition-duration: 0.3s;
 	}
 </style>
 
@@ -87,8 +92,8 @@ alert("Currently Under Construction");
 
 <script type="text/javascript"> //滚动播放header标题
 
-	function changeContext(title,id) { //改变标题函数
-		document.getElementById(id).innerHTML=title;
+	function changeContext(titleText,id) { //改变标题函数
+		document.getElementById(id).innerHTML=titleText;
 	}
 
 	function fade(id,startOpacity,endOpacity){ //淡入淡出函数, example: fadeIn("test", 0.2, 0.8)
@@ -148,6 +153,7 @@ alert("Currently Under Construction");
 				},10);
 	}
 
+
 	function cycle(msg,delay){ //msg:Array()存储到欢迎信息, delay:int 文字间的间隔时间， 依赖于function changeTitle, fadeIn
 		var i=0
 		var timer=setInterval(function(){
@@ -191,6 +197,7 @@ function RunmoveUp(){
 	},10);
 }
 </script>
+
 
 </header>
 	<div>
@@ -265,7 +272,7 @@ var disqus_config = function () {
 	<span>-> Made with </span>
 	<span style="color:red">&hearts;</span>
 	<span> By RabbitA's Blog <-</span><br>
-	<small>Today's Date: Sep 21, 2016</small>
+	<small>Today's Date: Sep 22, 2016</small>
 </footer>
 
 <small><script type="text/javascript"> //检测浏览器

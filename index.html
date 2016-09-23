@@ -3,6 +3,9 @@ layout: default
 bg: black
 ---
 
+<div id="t" style="transition-duration:3s" class="t" >ddd</div>  
+
+
 <div style="margin-right:1%;margin-top:-30px;">
 <ul style="list-style-type:square">
 {% for post in site.posts limit:5 %}
@@ -23,6 +26,23 @@ bg: black
 <a style="color:#ff9e9c" href="{{site.url}}/archive.html">Read More </a>
 <span style="color:#ff9e9c">&#9660;</span>
 </div>
+
+
+
+
+<!--Test Css+Js 淡入淡出-->
+<style type="text/css">
+.t{color:green;background:white;position: absolute;left:100px;opacity: 1;}
+#t:hover{color:red;background: blue;left: 300px;opacity: 1;}
+.t1{color:red;background: blue;left: 300px;opacity: 0;}
+</style>
+<script type="text/javascript">
+  alert(document.getElementById("t").className);
+  document.getElementById("t").className="t1";
+  setTimeout("document.getElementById('t').className='t'",3000); //document.getElementById("t").className="t";
+</script>
+
+
 
 
 
