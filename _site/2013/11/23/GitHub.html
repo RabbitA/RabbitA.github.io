@@ -18,15 +18,32 @@
 </head>
 	
 <body>
-	<div style="text-align:center">
+	<div style="position:relative;text-align:center;border-bottom:1px solid #d3d1d3">
 		<header id="header" style="background:#006600;height:80px">
 	<a id="Goto1"></a><!--锚定点-->
 	<div><a href="/index.html" class="headerText" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
-	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;border-bottom:1px solid #d3d1d3;height: 0px;">
+	<div id="nav" style="position:absolute;width:21%;top:80px;background:#f1f1f1;border:1px solid #d3d1d3;border-top:0px solid #d3d1d3;height:100vh;z-index: 1">
 
-		<div id="navBox" style="background: #f1f1f1;width:20%;margin-top:75px;margin-left:1%;border-radius: 5px;border:1px solid #d3d1d3">
-			<div style="height:100px"><br><small>Today's Date: Sep 24, 2016</small></div>
-			<div class="navLink" style=""><a style="color:green" href="/index.html">Blog</a></div>
+		<div id="navBox" style="background: #f1f1f1;margin-right:2%;margin-top:0px;margin-left:2%;border-radius: 5px;border:1px none #66cc66">
+			<div style="height:auto;border:0px solid black">
+			<small>Today's Date: Sep 24, 2016</small>
+			<img src="/img/RabbitA-1.jpg">
+			</div>
+			<div class="navLink" style=""><a style="color:green" href="/index.html">New Posts</a>
+				<div>
+					
+						<a href="/2014/01/04/iLotus.html">iLotus主题更新</a><br>
+					
+						<a href="/2013/11/23/GitHub.html">GitHub</a><br>
+					
+						<a href="/2013/11/23/GitHub-copy.html">GitHub</a><br>
+					
+						<a href="/2012/12/22/111test.html">Who Do You Think You Are?</a><br>
+					
+						<a href="/2012/01/11/test.html">markdown 语法学习</a><br>
+					
+				</div>
+			</div>
 
 			<div class="navLink" style=""><a style="color:green" href="/archive.html">Archive</a></div>
 
@@ -41,7 +58,7 @@
 		</div>
 	</div>
 
-	<div id="buttonTop" style="position:fixed;bottom:5%;right:5%;width:50px;height:50px;display:none"> <!--回到顶上的小圆点按钮-->
+	<div id="buttonTop" style="position:fixed;bottom:5%;right:5%;width:50px;height:50px;display:none;z-index: 20"> <!--回到顶上的小圆点按钮-->
 		<button onclick="RunmoveUp()" style="opacity:0.8;width:100%;height:100%;border-radius:25px;background:#996633;color:white;border:1px solid brown;font-size:100%;text-align:center">&#9650;</button>
 	</div>
 
@@ -61,8 +78,8 @@
 		overflow:hidden;
 	}
 	.navLink:hover{
-		background-color: white;
-		opacity:0.5;
+		background-color: #e1f3e2;
+		opacity:0.8;
 		padding-bottom: 100px;
 		transition-duration: 0.3s;
 	}
@@ -220,14 +237,21 @@ function RunmoveUp(){
 
 
 </header>
-	<div>
+	</div>
 	<br>
+	<div style="min-height:calc(100vh);">
 	<main>
 		<article style="padding:12px;margin:12px;text-align:left;outline:white dotted">
-			<div style="margin-left:20%;padding:10px;text-align: justify;">
-<span>Title: GitHub</span><br>
-<span>Post on: Nov 23, 2013</span><br>
-<span>Author: </span><br><br>
+			<div style="margin-left:21%;text-align: justify;border:1px solid #66cc66">
+<div style="background: #f1f1f1">
+    <div style="padding: 10px">
+    <span>Title: GitHub</span><br>
+    <span>Post on: Nov 23, 2013</span><br>
+    <span>Author: </span>
+    </div>
+</div>
+<br>
+<div style="padding: 10px">
 <p>The shading of the map illustrates the number of users as a proportion of each country’s Internet population. The circular charts surrounding the two hemispheres depict the total number of GitHub users (left) and commits (right) per country.
 24 February 2009: GitHub team members announced, in a talk at Yahoo! headquarters, that within the first year of being online, GitHub had accumulated over 46,000 public repositories, 17,000 of which were formed in the previous month alone. At that time, about 6,200 repositories had been forked at least once and 4,600 had been merged.
 5 July 2009: GitHub announced that the site was now harnessed by over 100,000 users.
@@ -256,16 +280,20 @@ In June 2015, GitHub opened an office in Japan that is its first office outside 
 
 <p>欢迎访问<a href="http://www.zhanxin.info">「掌心」</a>，这里是我的新窝。</p>
 <br>
-
-<!-- Look the author details up from the site config. -->
-
-<!-- Output author details if some exist. -->
-
-
-<!--Disqus Code-->
-<div id="disqus_thread"></div>
 </div>
 
+
+<div>
+    <!-- Look the author details up from the site config. -->
+    
+    <!-- Output author details if some exist. -->
+    
+</div>
+<div style="background: #f1f1f1;padding: 10px">    
+    <!--Disqus Code-->
+    <div id="disqus_thread"></div>
+    </div>
+</div>
 <script>
 
 /**
@@ -288,8 +316,9 @@ var disqus_config = function () {
 
 		</article>
 	</main>
+	</div>
 	<br>
-	<div style="text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3">
+	<div style="position:relative;text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3;z-index: 10;">
 	<footer>
 	<span>-> Made with </span>
 	<span style="color:red">&hearts;</span>
@@ -304,5 +333,5 @@ document.write("Visitor's System: "+navigator.platform+"-"+navigator.appName+"-"
 
 <!--网页计数器-->
 <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=rabbits.github.io&digit=style/plain/34/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">Download 3d STL files</a>
-	<div>
+	</div>
 </body>

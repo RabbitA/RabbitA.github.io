@@ -2,17 +2,19 @@
 <html>
 	{% include head.html %}	
 <body>
-	<div style="text-align:center">
+	<div style="position:relative;text-align:center;border-bottom:1px solid #d3d1d3">
 		{% include header.html %}
-	<div>
+	</div>
 	<br>
+	<div style="min-height:calc(100vh);">
 	<main>
 		<article style="padding:12px;margin:12px;text-align:left;outline:white dotted">
 			{{ content }}
 		</article>
 	</main>
+	</div>
 	<br>
-	<div style="text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3">
+	<div style="position:relative;text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3;z-index: 10;">
 	{% include footer.html %}
-	<div>
+	</div>
 </body>

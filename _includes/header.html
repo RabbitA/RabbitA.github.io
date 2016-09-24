@@ -1,11 +1,20 @@
 <header id="header" style="background:#006600;height:80px">
 	<a id="Goto1"></a><!--锚定点-->
 	<div><a href="{{site.url}}/index.html" class="headerText" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white">{{site.title}} &#9731;</h1></a></div>
-	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;border-bottom:1px solid #d3d1d3;height: 0px;">
+	<div id="nav" style="position:absolute;width:21%;top:80px;background:#f1f1f1;border:1px solid #d3d1d3;border-top:0px solid #d3d1d3;height:100vh;z-index: 1">
 
-		<div id="navBox" style="background: #f1f1f1;width:20%;margin-top:75px;margin-left:1%;border-radius: 5px;border:1px solid #d3d1d3">
-			<div style="height:100px"><br><small>Today's Date: {{site.time | date:"%b %d, %Y"}}</small></div>
-			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/index.html">Blog</a></div>
+		<div id="navBox" style="background: #f1f1f1;margin-right:2%;margin-top:0px;margin-left:2%;border-radius: 5px;border:1px none #66cc66">
+			<div style="height:auto;border:0px solid black">
+			<small>Today's Date: {{site.time | date:"%b %d, %Y"}}</small>
+			<img src="{{site.url}}/img/RabbitA-1.jpg">
+			</div>
+			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/index.html">New Posts</a>
+				<div>
+					{% for post in site.posts limit:5 %}
+						<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a><br>
+					{% endfor %}
+				</div>
+			</div>
 
 			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/archive.html">Archive</a></div>
 
@@ -20,7 +29,7 @@
 		</div>
 	</div>
 
-	<div id="buttonTop" style="position:fixed;bottom:5%;right:5%;width:50px;height:50px;display:none"> <!--回到顶上的小圆点按钮-->
+	<div id="buttonTop" style="position:fixed;bottom:5%;right:5%;width:50px;height:50px;display:none;z-index: 20"> <!--回到顶上的小圆点按钮-->
 		<button onclick="RunmoveUp()" style="opacity:0.8;width:100%;height:100%;border-radius:25px;background:#996633;color:white;border:1px solid brown;font-size:100%;text-align:center">&#9650;</button>
 	</div>
 
@@ -40,8 +49,8 @@
 		overflow:hidden;
 	}
 	.navLink:hover{
-		background-color: white;
-		opacity:0.5;
+		background-color: #e1f3e2;
+		opacity:0.8;
 		padding-bottom: 100px;
 		transition-duration: 0.3s;
 	}

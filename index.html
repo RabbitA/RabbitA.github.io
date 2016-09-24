@@ -7,7 +7,7 @@ bg: black
 
 {% for post in site.posts limit:5 %}
 
-  	<div>
+  	<div style="background: #f1f1f1">
       <span style="color:#c91b0c">{{ post.date | date: "%b %d, %Y" }}</span>
       <span>&#9997;</span>
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
