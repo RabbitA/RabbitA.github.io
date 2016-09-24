@@ -32,8 +32,12 @@
 
 			<div class="navLink" style=""><a style="color:green" href="/about.html" onclick="disp_alert()">About</a></div>
 
-			<div class="navLink" style=""><a style="color:green" href="/contact.html">Contact</a></div>
-			<div style="height:100px">bdfsf</div>
+			<div class="navLink" style=""><a style="color:green" href="/contact.html">Contact</a>
+				<div class="navContent">list 1</div>
+				<div class="navContent">list 2</div>
+				<div class="navContent">list 3</div>
+			</div>
+			<div style="height:100px"></div>
 		</div>
 	</div>
 
@@ -54,12 +58,19 @@
 		border:1px solid #d3d1d3;
 		transition-duration: 0.3s;
 		margin-top: -1px;	
+		overflow:hidden;
 	}
 	.navLink:hover{
 		background-color: white;
 		opacity:0.5;
 		padding-bottom: 100px;
 		transition-duration: 0.3s;
+	}
+	.navContent{
+		
+	}
+	.navContent:hover{
+		display: block;
 	}
 </style>
 
@@ -213,7 +224,7 @@ function RunmoveUp(){
 	<br>
 	<main>
 		<article style="padding:12px;margin:12px;text-align:left;outline:white dotted">
-			<div id="posts" style="transition-duration:0.8s;margin-left:20%;margin-right: 0">
+			<div id="posts" style="transition-duration:0.8s;margin-left:21%;margin-right: 0">
 
 
 
