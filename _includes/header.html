@@ -11,14 +11,14 @@
 			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/index.html">New Posts</a>
 				<div>
 					{% for post in site.posts limit:5 %}
-						<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a><br>
+						<a href="{{ post.url | prepend: site.baseurl }}">"{{ post.title | escape }}"</a><br>
 					{% endfor %}
 				</div>
 			</div>
 
 			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/archive.html">Archive</a></div>
 
-			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/about.html" onclick="disp_alert()">About</a></div>
+			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/about.html" onclick="disp_alert()">About Me</a></div>
 
 			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/contact.html">Contact</a>
 				<div class="navContent">list 1</div>
