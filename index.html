@@ -3,20 +3,21 @@ layout: default
 bg: black
 ---
 
-<div id="posts" style="transition-duration:0.8s;margin-right:1%">
-<ul style="list-style-type:square">
+<div id="posts" style="transition-duration:0.8s;margin-left:20%;margin-right: 0">
+
 {% for post in site.posts limit:5 %}
-  <li>
+
   	<div>
       <span style="color:#c91b0c">{{ post.date | date: "%b %d, %Y" }}</span>
       <span>&#9997;</span>
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
       <span style="color:#ff9e9c">(Recently Posted)</span>
-      <div style="background:#ffe4e4;padding:10px;border-radius:5px;border:1px solid #ffd0d0"><span>{{post.excerpt}}</span></div><!--summary-->
+      <div style="background:#e1f3e2;padding:10px;border-radius:5px;border:1px solid #66cc66"><span>{{post.excerpt}}</span></div><!--summary-->
     </div>
-  </li>
+    <div><br></div>
+
 {% endfor %}
-</ul>
+
 </div>
 
 <div style="text-align:center">

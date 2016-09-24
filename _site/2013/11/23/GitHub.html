@@ -19,22 +19,26 @@
 	
 <body>
 	<div style="text-align:center">
-		<header id="header" style="background:#fa5c5c;height:80px">
+		<header id="header" style="background:#006600;height:80px">
 	<a id="Goto1"></a><!--锚定点-->
 	<div><a href="/index.html" class="headerText" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
-	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;border-bottom:1px solid #d3d1d3;">
-		<div class="navLink" style="left: 0%;"><a style="color:red	" href="/index.html">Blog</a></div>
+	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;border-bottom:1px solid #d3d1d3;height: 0px;">
 
-		<div class="navLink" style="left: 20%"><a style="color:red" href="/archive.html">Archive</a></div>
+		<div id="navBox" style="background: #f1f1f1;width:20%;margin-top:75px;border-radius: 5px">
+			<div style="height:100px"><br><small>Today's Date: Sep 23, 2016</small></div>
+			<div class="navLink" style=""><a style="color:green" href="/index.html">Blog</a></div>
 
-		<div class="navLink" style="left: 40%"><a style="color:red" href="/about.html" onclick="disp_alert()">About</a></div>
+			<div class="navLink" style=""><a style="color:green" href="/archive.html">Archive</a></div>
 
-		<div class="navLink" style="left: 60%"><a style="color:red" href="/contact.html">Contact</a></div>
-		<div class="navLink" style="left: 80%"><a style="color:red" href="/contact.html">Rss</a></div>
+			<div class="navLink" style=""><a style="color:green" href="/about.html" onclick="disp_alert()">About</a></div>
+
+			<div class="navLink" style=""><a style="color:green" href="/contact.html">Contact</a></div>
+			<div style="height:100px">bdfsf</div>
+		</div>
 	</div>
 
 	<div id="buttonTop" style="position:fixed;bottom:5%;right:5%;width:50px;height:50px;display:none"> <!--回到顶上的小圆点按钮-->
-		<button onclick="RunmoveUp()" style="opacity:0.4;width:100%;height:100%;border-radius:25px;background:red;color:white;border:1px solid red;font-size:100%;text-align:center">&#9650;</button>
+		<button onclick="RunmoveUp()" style="opacity:0.8;width:100%;height:100%;border-radius:25px;background:#996633;color:white;border:1px solid brown;font-size:100%;text-align:center">&#9650;</button>
 	</div>
 
 <style type="text/css">
@@ -42,15 +46,17 @@
 		text-decoration: none;
 	}
 	.navLink{
-		position: absolute;
+		position: relative;
 		height: 25px;
-		width:25%;
-		background: #f1f1f1;
-		border-bottom:1px solid #d3d1d3;
+		width:90%;
+		margin:auto;
+		background: white;
+		border:1px solid #d3d1d3;
 		transition-duration: 0.3s;
+		margin-top: -1px;	
 	}
 	.navLink:hover{
-		background-color: black;
+		background-color: #ccff99;
 		opacity:0.5;
 		padding-bottom: 100px;
 		transition-duration: 0.3s;
@@ -81,7 +87,7 @@ alert("Currently Under Construction");
 </script>
 
 
-<script type="text/javascript"> //控制下方回到顶部的小圆点
+<script type="text/javascript"> //控制下方回到顶部的小圆点以及nav
 	window.onscroll=function(){
 		navPosition();
 	}
@@ -270,12 +276,12 @@ var disqus_config = function () {
 		</article>
 	</main>
 	<br>
-	<div style="text-align:center;background:#fa5c5c;color:white">
+	<div style="text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3">
 	<footer>
 	<span>-> Made with </span>
 	<span style="color:red">&hearts;</span>
 	<span> By RabbitA's Blog <-</span><br>
-	<small>Today's Date: Sep 23, 2016</small>
+	
 </footer>
 
 <small><script type="text/javascript"> //检测浏览器

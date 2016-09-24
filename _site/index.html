@@ -19,22 +19,26 @@
 	
 <body>
 	<div style="text-align:center">
-		<header id="header" style="background:#fa5c5c;height:80px">
+		<header id="header" style="background:#006600;height:80px">
 	<a id="Goto1"></a><!--锚定点-->
 	<div><a href="/index.html" class="headerText" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
-	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;border-bottom:1px solid #d3d1d3;">
-		<div class="navLink" style="left: 0%;"><a style="color:red	" href="/index.html">Blog</a></div>
+	<div id="nav" style="position:absolute;width:100%;top:80px;background:#f1f1f1;border-bottom:1px solid #d3d1d3;height: 0px;">
 
-		<div class="navLink" style="left: 20%"><a style="color:red" href="/archive.html">Archive</a></div>
+		<div id="navBox" style="background: #f1f1f1;width:20%;margin-top:75px;border-radius: 5px">
+			<div style="height:100px"><br><small>Today's Date: Sep 23, 2016</small></div>
+			<div class="navLink" style=""><a style="color:green" href="/index.html">Blog</a></div>
 
-		<div class="navLink" style="left: 40%"><a style="color:red" href="/about.html" onclick="disp_alert()">About</a></div>
+			<div class="navLink" style=""><a style="color:green" href="/archive.html">Archive</a></div>
 
-		<div class="navLink" style="left: 60%"><a style="color:red" href="/contact.html">Contact</a></div>
-		<div class="navLink" style="left: 80%"><a style="color:red" href="/contact.html">Rss</a></div>
+			<div class="navLink" style=""><a style="color:green" href="/about.html" onclick="disp_alert()">About</a></div>
+
+			<div class="navLink" style=""><a style="color:green" href="/contact.html">Contact</a></div>
+			<div style="height:100px">bdfsf</div>
+		</div>
 	</div>
 
 	<div id="buttonTop" style="position:fixed;bottom:5%;right:5%;width:50px;height:50px;display:none"> <!--回到顶上的小圆点按钮-->
-		<button onclick="RunmoveUp()" style="opacity:0.4;width:100%;height:100%;border-radius:25px;background:red;color:white;border:1px solid red;font-size:100%;text-align:center">&#9650;</button>
+		<button onclick="RunmoveUp()" style="opacity:0.8;width:100%;height:100%;border-radius:25px;background:#996633;color:white;border:1px solid brown;font-size:100%;text-align:center">&#9650;</button>
 	</div>
 
 <style type="text/css">
@@ -42,15 +46,17 @@
 		text-decoration: none;
 	}
 	.navLink{
-		position: absolute;
+		position: relative;
 		height: 25px;
-		width:25%;
-		background: #f1f1f1;
-		border-bottom:1px solid #d3d1d3;
+		width:90%;
+		margin:auto;
+		background: white;
+		border:1px solid #d3d1d3;
 		transition-duration: 0.3s;
+		margin-top: -1px;	
 	}
 	.navLink:hover{
-		background-color: black;
+		background-color: #ccff99;
 		opacity:0.5;
 		padding-bottom: 100px;
 		transition-duration: 0.3s;
@@ -81,7 +87,7 @@ alert("Currently Under Construction");
 </script>
 
 
-<script type="text/javascript"> //控制下方回到顶部的小圆点
+<script type="text/javascript"> //控制下方回到顶部的小圆点以及nav
 	window.onscroll=function(){
 		navPosition();
 	}
@@ -207,27 +213,28 @@ function RunmoveUp(){
 	<br>
 	<main>
 		<article style="padding:12px;margin:12px;text-align:left;outline:white dotted">
-			<div id="posts" style="transition-duration:0.8s;margin-right:1%">
-<ul style="list-style-type:square">
+			<div id="posts" style="transition-duration:0.8s;margin-left:20%;margin-right: 0">
 
-  <li>
+
+
   	<div>
       <span style="color:#c91b0c">Jan 04, 2014</span>
       <span>&#9997;</span>
       <a href="/2014/01/04/iLotus.html">iLotus主题更新</a>
       <span style="color:#ff9e9c">(Recently Posted)</span>
-      <div style="background:#ffe4e4;padding:10px;border-radius:5px;border:1px solid #ffd0d0"><span><p><a href="http://www.haorooms.com/post/html_tsfh">符号大全</a></p>
+      <div style="background:#e1f3e2;padding:10px;border-radius:5px;border:1px solid #66cc66"><span><p><a href="http://www.haorooms.com/post/html_tsfh">符号大全</a></p>
 </span></div><!--summary-->
     </div>
-  </li>
+    <div><br></div>
 
-  <li>
+
+
   	<div>
       <span style="color:#c91b0c">Nov 23, 2013</span>
       <span>&#9997;</span>
       <a href="/2013/11/23/GitHub.html">GitHub</a>
       <span style="color:#ff9e9c">(Recently Posted)</span>
-      <div style="background:#ffe4e4;padding:10px;border-radius:5px;border:1px solid #ffd0d0"><span><p>The shading of the map illustrates the number of users as a proportion of each country’s Internet population. The circular charts surrounding the two hemispheres depict the total number of GitHub users (left) and commits (right) per country.
+      <div style="background:#e1f3e2;padding:10px;border-radius:5px;border:1px solid #66cc66"><span><p>The shading of the map illustrates the number of users as a proportion of each country’s Internet population. The circular charts surrounding the two hemispheres depict the total number of GitHub users (left) and commits (right) per country.
 24 February 2009: GitHub team members announced, in a talk at Yahoo! headquarters, that within the first year of being online, GitHub had accumulated over 46,000 public repositories, 17,000 of which were formed in the previous month alone. At that time, about 6,200 repositories had been forked at least once and 4,600 had been merged.
 5 July 2009: GitHub announced that the site was now harnessed by over 100,000 users.
 27 July 2009: In another talk delivered at Yahoo!, Tom Preston-Werner announced that GitHub had grown to host 90,000 unique public repositories, 12,000 having been forked at least once, for a total of 135,000 repositories.[21]
@@ -243,26 +250,28 @@ In June 2015, GitHub opened an office in Japan that is its first office outside 
 
 </span></div><!--summary-->
     </div>
-  </li>
+    <div><br></div>
 
-  <li>
+
+
   	<div>
       <span style="color:#c91b0c">Dec 22, 2012</span>
       <span>&#9997;</span>
       <a href="/2012/12/22/111test.html">Who Do You Think You Are?</a>
       <span style="color:#ff9e9c">(Recently Posted)</span>
-      <div style="background:#ffe4e4;padding:10px;border-radius:5px;border:1px solid #ffd0d0"><span><p>Who Do You Think You Are (US)? is an American genealogy documentary series that is an adaptation of the British BBC series of the same name. In each episode, a different celebrity goes on a journey to trace parts of his or her family tree. The show premiered on NBC on March 5, 2010, as one of the replacement shows of The Jay Leno Show. It ran on NBC for three seasons before being cancelled in 2012;[1] it was then picked up by TLC,[2] where it has aired for four more seasons. It was renewed for an eighth season, consisting of six episodes, which premiered on April 3, 2016.[3]</p>
+      <div style="background:#e1f3e2;padding:10px;border-radius:5px;border:1px solid #66cc66"><span><p>Who Do You Think You Are (US)? is an American genealogy documentary series that is an adaptation of the British BBC series of the same name. In each episode, a different celebrity goes on a journey to trace parts of his or her family tree. The show premiered on NBC on March 5, 2010, as one of the replacement shows of The Jay Leno Show. It ran on NBC for three seasons before being cancelled in 2012;[1] it was then picked up by TLC,[2] where it has aired for four more seasons. It was renewed for an eighth season, consisting of six episodes, which premiered on April 3, 2016.[3]</p>
 </span></div><!--summary-->
     </div>
-  </li>
+    <div><br></div>
 
-  <li>
+
+
   	<div>
       <span style="color:#c91b0c">Jan 11, 2012</span>
       <span>&#9997;</span>
       <a href="/2012/01/11/test.html">markdown 语法学习</a>
       <span style="color:#ff9e9c">(Recently Posted)</span>
-      <div style="background:#ffe4e4;padding:10px;border-radius:5px;border:1px solid #ffd0d0"><span><p>###h 标题的写法
+      <div style="background:#e1f3e2;padding:10px;border-radius:5px;border:1px solid #66cc66"><span><p>###h 标题的写法
         #h1
         ##h2
         ######h6</p>
@@ -327,15 +336,16 @@ Markdown 使用 email 形式的區塊引言
 </td></tr></td></tr></tbody></table>
 </span></div><!--summary-->
     </div>
-  </li>
+    <div><br></div>
 
-  <li>
+
+
   	<div>
       <span style="color:#c91b0c">Dec 02, 2011</span>
       <span>&#9997;</span>
       <a href="/2011/12/02/markdown-roll.html">markdown 语法学习</a>
       <span style="color:#ff9e9c">(Recently Posted)</span>
-      <div style="background:#ffe4e4;padding:10px;border-radius:5px;border:1px solid #ffd0d0"><span><p>###h 标题的写法
+      <div style="background:#e1f3e2;padding:10px;border-radius:5px;border:1px solid #66cc66"><span><p>###h 标题的写法
         #h1
         ##h2
         ######h6</p>
@@ -400,9 +410,10 @@ Markdown 使用 email 形式的區塊引言
 </td></tr></td></tr></tbody></table>
 </span></div><!--summary-->
     </div>
-  </li>
+    <div><br></div>
 
-</ul>
+
+
 </div>
 
 <div style="text-align:center">
@@ -437,12 +448,12 @@ VIH_DisplayOnPage = "yes";
 		</article>
 	</main>
 	<br>
-	<div style="text-align:center;background:#fa5c5c;color:white">
+	<div style="text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3">
 	<footer>
 	<span>-> Made with </span>
 	<span style="color:red">&hearts;</span>
 	<span> By RabbitA's Blog <-</span><br>
-	<small>Today's Date: Sep 23, 2016</small>
+	
 </footer>
 
 <small><script type="text/javascript"> //检测浏览器
