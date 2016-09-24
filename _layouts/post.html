@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<div style="margin-left:20%;padding:10px;text-align: justify;">
 <span>Title: {{page.title}}</span><br>
 <span>Post on: {{page.date | date: "%b %-d, %Y"}}</span><br>
 <span>Author: {{page.author}}</span><br><br>
@@ -16,9 +17,10 @@ layout: default
     </span>
 {% endif %}
 
-
 <!--Disqus Code-->
 <div id="disqus_thread"></div>
+</div>
+
 <script>
 
 /**
