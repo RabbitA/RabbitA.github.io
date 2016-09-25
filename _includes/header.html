@@ -214,15 +214,19 @@ function RunmoveUp(){
 }
 </script>
 
-<div id="test" style="position:fixed;bottom:0px;right:0px;background: yellow;opacity: 0.8;z-index: 9999">dd</div>
+<!---->
+<div id="test" style="position:fixed;background: yellow;opacity: 0.6;z-index: 9999"></div>
 <script type="text/javascript">
-	function test(){ //显示页面上下滑动了多少像素
+	function test(){ //显示页面上下滑动了多少像素,鼠标位置
 		var a="ScrollTop:"+document.body.scrollTop+" ";
 		var b="("+event.clientX +", "+event.clientY+")";
 		document.getElementById("test").innerHTML=a+b;
+		document.getElementById("test").style.top=event.clientY+15+"px";
+		document.getElementById("test").style.left=event.clientX+8+"px";
+
 	}
     window.onmousemove=function(){test();}
 </script>
-
+<!---->
 
 </header>
