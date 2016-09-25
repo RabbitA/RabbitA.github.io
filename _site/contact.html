@@ -125,6 +125,7 @@ alert("Currently Under Construction");
 <script type="text/javascript"> //控制下方回到顶部的小圆点以及nav
 	window.onscroll=function(){
 		navPosition();
+		test();
 	}
 	window.onload=function(){
 		imgWH();
@@ -242,6 +243,16 @@ function RunmoveUp(){
 }
 </script>
 
+<div id="test" style="position:fixed;bottom:0px;right:0px;background: yellow;opacity: 0.8;z-index: 9999">dd</div>
+<script type="text/javascript">
+	function test(){ //显示页面上下滑动了多少像素
+		var a="ScrollTop:"+document.body.scrollTop+" ";
+		var b="("+event.clientX +", "+event.clientY+")";
+		document.getElementById("test").innerHTML=a+b;
+	}
+    window.onmousemove=function(){test();}
+</script>
+
 
 </header>
 	</div>
@@ -287,7 +298,7 @@ function RunmoveUp(){
 	</div>
 	<br>
 	<div style="position:relative;text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3;z-index: 10;">
-	<footer>
+	<footer id="footer">
 	<span>-> Made with </span>
 	<span style="color:red">&hearts;</span>
 	<span> By RabbitA's Blog <-</span><br>
@@ -301,5 +312,6 @@ document.write("Visitor's System: "+navigator.platform+"-"+navigator.appName+"-"
 
 <!--网页计数器-->
 <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=rabbits.github.io&digit=style/plain/34/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">Download 3d STL files</a>
+
 	</div>
 </body>
