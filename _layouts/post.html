@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<div style="margin-left:21%;text-align: justify;border:1px solid #66cc66">
-<div style="background: #f1f1f1">
+<div style="margin-left:21%;text-align: justify;border:1px solid #66cc66;border-radius: 5px">
+<div style="background: #f1f1f1;border-radius: 5px 5px 0 0">
     <div style="padding: 10px">
     <span>Title: {{page.title}}</span><br>
     <span>Post on: {{page.date | date: "%b %-d, %Y"}}</span><br>
@@ -26,7 +26,7 @@ layout: default
         </span>
     {% endif %}
 </div>
-<div style="background: #f1f1f1;padding: 10px">    
+<div style="background: #f1f1f1;padding: 10px;border-radius: 0 0 5px 5px">    
     <!--Disqus Code-->
     <div id="disqus_thread"></div>
     </div>
