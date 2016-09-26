@@ -34,13 +34,13 @@
 					
 						<a href="/2014/01/04/iLotus.html">"iLotus主题更新"</a><br>
 					
-						<a href="/2013/11/23/GitHub.html">"GitHub"</a><br>
+						<a href="/2013/11/23/Fantasy.html">"Fantasy"</a><br>
 					
-						<a href="/2013/11/23/GitHub-copy.html">"GitHub"</a><br>
+						<a href="/2012/12/22/TheFirstTrip.html">"My First Trip to Arizona"</a><br>
 					
-						<a href="/2012/12/22/111test.html">"Who Do You Think You Are?"</a><br>
+						<a href="/2011/12/02/markdown.html">"markdown"</a><br>
 					
-						<a href="/2012/01/11/test.html">"markdown 语法学习"</a><br>
+						<a href="/2010/11/23/GitHub.html">"GitHub"</a><br>
 					
 				</div>
 			</div>
@@ -244,14 +244,14 @@ function RunmoveUp(){
 </script>
 
 <!---->
-<div id="test" style="position:fixed;background: yellow;opacity: 0.8;z-index: 9999"></div>
+<div id="test" style="position:fixed;bottom:0;background: yellow;opacity: 0.8;transition-duration: 3s;z-index: 9999"></div>
 <script type="text/javascript">
 	function test(){ //显示页面上下滑动了多少像素,鼠标位置
 		var a="ScrollTop:"+document.body.scrollTop+" ";
 		var b="("+event.clientX +", "+event.clientY+")";
 		document.getElementById("test").innerHTML=a+b;
-		document.getElementById("test").style.top=event.clientY+15+"px";
-		document.getElementById("test").style.left=event.clientX+8+"px";
+		//document.getElementById("test").style.top=event.clientY+15+"px";
+		//document.getElementById("test").style.left=event.clientX+8+"px";
 
 	}
     window.onmousemove=function(){test();}
