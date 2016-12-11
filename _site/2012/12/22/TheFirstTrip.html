@@ -18,8 +18,9 @@
 </head>
 	
 <body>
-	<div style="position:relative;text-align:center;border-bottom:1px solid #d3d1d3">
-		<header id="header">
+	<div style="">
+		<div style="position:relative;text-align:center;border-bottom:1px solid #d3d1d3">
+			<header id="header">
 
 	<!--锚定点-->
 	<a id="Goto1"></a>
@@ -28,68 +29,23 @@
 	<div id="banner" class="banner">
 		<!--banner text-->
 		<div class="bannerTitle">
-			<a href="/index.html" class="headerText" style="color: white"><h1 id="siteTitle">RabbitA's Blog &#9731;</h1></a>
+			<a href="/index.html" class="headerText" style="color: white;"><h1 id="siteTitle">RabbitA's Blog &#9731;</h1></a>
 		</div>
 		<!--banner nav-->
 		<div id="bannerNav" class="bannerNav">
-		<a href="" class="navOption" style="color: white">Recent</a>
+		<a href="/index.html" class="navOption" style="color: white">Recent</a>
 		<span>|</span>
-		<a href="" class="navOption" style="color: white">Archive</a>
+		<a href="/archive.html" class="navOption" style="color: white">Archive</a>
 		<span>|</span>
-		<a href="" class="navOption" style="color: white">About</a>
+		<a href="/tools.html" class="navOption" style="color: white">About</a>
 		<span>|</span>
-		<a href="" class="navOption" style="color: white">Tools</a>
+		<a href="/tools.html" class="navOption" style="color: white">Tools</a>
 		<span>|</span>
-		<a href="" class="navOption" style="color: white">Contact</a>
+		<a href="/contact" class="navOption" style="color: white">Contact</a>
 		</div>
 	</div>
 
-	<!--nav box-->
-	<div id="nav" style="position:absolute;width:21%;top:80px;background:#f1f1f1;border:1px solid #d3d1d3;border-top:0px solid #d3d1d3;height:100vh;z-index: 1">
-
-		<div id="navBox" style="background: #f1f1f1;margin-right:2%;margin-top:0px;margin-left:2%;border-radius: 5px;border:1px none #66cc66">
-			<div style="display:block;border:0px solid red;">
-				<div style="display:block;height:auto;border:0px solid black;margin-top: 10px">
-					<img src="/img/RabbitA-1.jpg">
-				</div>
-				<div style="display:none;position:absolute;border:0px solid black;top:1%;width:50%;height:10%;margin-top: 25%;margin-left: 23%;word-wrap: normal;">Hello there, welcome to my website</div>
-			</div>
-			<div class="navLink" style=""><a style="color:green" href="/index.html">New Posts</a>
-				<img src="/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
-				<div>
-					
-						<a href="/2014/01/04/iLotus.html">"iLotus主题更新"</a><br>
-					
-						<a href="/2013/11/23/Fantasy.html">"Fantasy"</a><br>
-					
-						<a href="/2012/12/22/TheFirstTrip.html">"My First Trip to Arizona"</a><br>
-					
-						<a href="/2011/12/02/markdown.html">"markdown"</a><br>
-					
-						<a href="/2010/11/23/GitHub.html">"GitHub"</a><br>
-					
-				</div>
-			</div>
-
-			<div class="navLink" style=""><a style="color:green" href="/archive.html">Archive</a>
-				<img src="/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
-			</div>
-
-			<div class="navLink" style=""><a style="color:green" href="/about.html" onclick="disp_alert()">About Me</a>
-				<img src="/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
-			</div>
-
-			<div class="navLink" style=""><a style="color:green" href="/contact.html">Contact</a>
-				<img src="/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
-				<div class="navContent">list 1</div>
-				<div class="navContent">list 2</div>
-				<div class="navContent">list 3</div>
-			</div>
-			<div id="IP"><small>Today's Date: Dec 11, 2016</small></div>
-			<div style="margin-top: 10px">Other awesome site:</div>
-			<div><a style="color:green" href="http://www.yuxuyong.com">鱼先森的美国日记</a></div>
-		</div>
-	</div>
+	
 
 	<!--buttun to top-->
 	<div id="buttonTop" style="position:fixed;bottom:5%;right:2%;width:100px;height:100px;display:none;z-index: 20;"> <!--回到顶上的小圆点按钮-->
@@ -101,17 +57,16 @@
 <style type="text/css">
 
 	.banner{
-		background:#006600;
-		height:80px;
 		width:100%;
 		position: relative;
-		padding-top: 20px;
 		z-index: 999;
-		transition-duration: 3s;
 	}
 
-	.bannerTitle{
+	.bannerTitle{	
+		background:#006600;
 		color: red;
+		padding-top: 18px;
+		height: 70px;
 	}
 
 	.headerText{
@@ -138,9 +93,12 @@
 
 	.navOption{
 		color:white;
+		transition-duration: 0.1s;
 	}
 	.navOption:hover{
 		color:yellow;
+		padding-right:10px;
+		padding-left: 10px;
 	}
 
 	.navLink{
@@ -183,16 +141,16 @@ alert("Currently Under Construction");
 <script type="text/javascript"> //使得nav保持在屏幕上侧, 初始时 :top 为 80px
 	function navPosition() {
 		if(document.body.scrollTop>80){
-			document.getElementById("nav").style.position="fixed";
-			document.getElementById("nav").style.top="0px";
+			//document.getElementById("sideNav").style.position="fixed";
+			//document.getElementById("sideNav").style.top="0px";
 			document.getElementById("bannerNav").style.position="fixed";
 			document.getElementById("bannerNav").style.top="0px";
 			document.getElementById("bannerNav").style.background="green";
 			document.getElementById("bannerNav").style.opacity="0.8";
 			document.getElementById("buttonTop").style.display="inline";
 		} else {
-			document.getElementById("nav").style.position="absolute";
-			document.getElementById("nav").style.top="80px";
+			//document.getElementById("sideNav").style.position="absolute";
+			//document.getElementById("sideNav").style.top="80px";
 			document.getElementById("bannerNav").style.position="absolute";
 			document.getElementById("bannerNav").style.top="80px";
 			document.getElementById("bannerNav").style.background="green";
@@ -300,7 +258,8 @@ alert("Currently Under Construction");
 		},delay);
 	}
 
-	var msg=["Hi there!","I'm RabbitA.","A programmer and an artist.","Welcome to my website.","Please feel free to look around.","I wish you enjoy yourself.","RabbitA's Blog &#9731;"];
+	//var msg=["Hi there!","I'm RabbitA.","A programmer and an artist.","Welcome to my website.","Please feel free to look around.","I wish you enjoy yourself.","RabbitA's Blog &#9731;"];
+	var msg=["曾虑多情损梵行","入山又恐别倾城","世间安得两全法","不负如来不负卿","--仓央嘉措"];
 	setTimeout("cycle(msg,4000)",10);
 </script>
 
@@ -344,12 +303,62 @@ function RunmoveUp(){
 <!---->
 
 </header>
+		</div>
+
+		<div>
+			<div style="width:20%;height:100%;margin-top:25px;background: #f1f1f1;">
+					<!--nav box-->
+	<div id="sideNav" style="position:absolute;width:21%;top:80px;background:#f1f1f1;border:1px solid #d3d1d3;border-top:0px solid #d3d1d3;z-index: 1;text-align: center;">
+
+		<div id="navBox" style="background: #f1f1f1;margin-right:2%;margin-top:0px;margin-left:2%;border-radius: 5px;border:1px none #66cc66">
+			<div style="display:block;border:0px solid red;">
+				<div style="display:block;height:auto;border:0px solid black;margin-top: 10px">
+					<img src="/img/RabbitA-1.jpg">
+				</div>
+				<div style="display:none;position:absolute;border:0px solid black;top:1%;width:50%;height:10%;margin-top: 25%;margin-left: 23%;word-wrap: normal;">Hello there, welcome to my website</div>
+			</div>
+			<div class="navLink" style=""><a style="color:green" href="/index.html">New Posts</a>
+				<img src="/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
+				<div>
+					
+						<a href="/2014/01/04/iLotus.html">"iLotus主题更新"</a><br>
+					
+						<a href="/2013/11/23/Fantasy.html">"Fantasy"</a><br>
+					
+						<a href="/2012/12/22/TheFirstTrip.html">"My First Trip to Arizona"</a><br>
+					
+						<a href="/2011/12/02/markdown.html">"markdown"</a><br>
+					
+						<a href="/2010/11/23/GitHub.html">"GitHub"</a><br>
+					
+				</div>
+			</div>
+
+			<div class="navLink" style=""><a style="color:green" href="/archive.html">Archive</a>
+				<img src="/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
+			</div>
+
+			<div class="navLink" style=""><a style="color:green" href="/about.html" onclick="disp_alert()">About Me</a>
+				<img src="/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
+			</div>
+
+			<div class="navLink" style=""><a style="color:green" href="/contact.html">Contact</a>
+				<img src="/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
+				<div class="navContent">list 1</div>
+				<div class="navContent">list 2</div>
+				<div class="navContent">list 3</div>
+			</div>
+			<div id="IP"><small>Today's Date: Dec 11, 2016</small></div>
+			<div style="margin-top: 10px">Other awesome site:</div>
+			<div><a style="color:green" href="http://www.yuxuyong.com">鱼先森的美国日记</a></div>
+		</div>
 	</div>
-	<br>
-	<div style="min-height:calc(100vh);">
-	<main>
-		<article style="padding:12px;margin:12px;text-align:left;outline:white dotted">
-			<div style="margin-left:21%;text-align: justify;border:1px solid #66cc66;border-radius: 5px">
+	
+
+			</div>
+			<div style="margin-left: 21%;margin-top:25px;min-height:calc(100vh);">
+				<div id="body" class="body">
+		<div style="text-align: justify;border:1px solid #66cc66;border-radius: 5px">
 <div style="background: #f1f1f1;border-radius: 5px 5px 0 0">
     <div style="padding: 10px">
     <span>Title: My First Trip to Arizona</span><br>
@@ -461,12 +470,19 @@ var disqus_config = function () {
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-		</article>
-	</main>
-	</div>
-	<br>
-	<div style="position:relative;text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3;z-index: 10;">
-	<footer id="footer">
+</div>
+
+<style type="text/css">
+.body{
+	margin: 1%; 
+}
+</style>
+
+			</div>
+		</div>
+
+		<div style="position:relative;text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3;z-index: 10;">
+		<footer id="footer">
 	<span>-> Made with </span>
 	<span style="color:red">&hearts;</span>
 	<span> By RabbitA's Blog <-</span><br>
@@ -480,6 +496,8 @@ document.write("Visitor's System: "+navigator.platform+"-"+navigator.appName+"-"
 
 <!--网页计数器-->
 <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=rabbits.github.io&digit=style/plain/34/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">Download 3d STL files</a>
+
+		</div>
 
 	</div>
 </body>

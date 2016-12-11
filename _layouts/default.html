@@ -2,19 +2,23 @@
 <html>
 	{% include head.html %}	
 <body>
-	<div style="position:relative;text-align:center;border-bottom:1px solid #d3d1d3">
-		{% include header.html %}
-	</div>
-	<br>
-	<div style="min-height:calc(100vh);">
-	<main>
-		<article style="padding:12px;margin:12px;text-align:left;outline:white dotted">
-			{{ content }}
-		</article>
-	</main>
-	</div>
-	<br>
-	<div style="position:relative;text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3;z-index: 10;">
-	{% include footer.html %}
+	<div style="">
+		<div style="position:relative;text-align:center;border-bottom:1px solid #d3d1d3">
+			{% include header.html %}
+		</div>
+
+		<div>
+			<div style="width:20%;height:100%;margin-top:25px;background: #f1f1f1;">
+				{% include side.html %}
+			</div>
+			<div style="margin-left: 21%;margin-top:25px;min-height:calc(100vh);">
+				{% include page.html %}
+			</div>
+		</div>
+
+		<div style="position:relative;text-align:center;background:#006600;color:white;border-top:1px solid #d3d1d3;z-index: 10;">
+		{% include footer.html %}
+		</div>
+
 	</div>
 </body>

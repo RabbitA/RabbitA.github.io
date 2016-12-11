@@ -1,0 +1,39 @@
+	<!--nav box-->
+	<div id="sideNav" style="position:absolute;width:21%;top:80px;background:#f1f1f1;border:1px solid #d3d1d3;border-top:0px solid #d3d1d3;z-index: 1;text-align: center;">
+
+		<div id="navBox" style="background: #f1f1f1;margin-right:2%;margin-top:0px;margin-left:2%;border-radius: 5px;border:1px none #66cc66">
+			<div style="display:block;border:0px solid red;">
+				<div style="display:block;height:auto;border:0px solid black;margin-top: 10px">
+					<img src="{{site.url}}/img/RabbitA-1.jpg">
+				</div>
+				<div style="display:none;position:absolute;border:0px solid black;top:1%;width:50%;height:10%;margin-top: 25%;margin-left: 23%;word-wrap: normal;">Hello there, welcome to my website</div>
+			</div>
+			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/index.html">New Posts</a>
+				<img src="{{site.url}}/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
+				<div>
+					{% for post in site.posts limit:5 %}
+						<a href="{{ post.url | prepend: site.baseurl }}">"{{ post.title | escape }}"</a><br>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/archive.html">Archive</a>
+				<img src="{{site.url}}/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
+			</div>
+
+			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/about.html" onclick="disp_alert()">About Me</a>
+				<img src="{{site.url}}/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
+			</div>
+
+			<div class="navLink" style=""><a style="color:green" href="{{site.url}}/contact.html">Contact</a>
+				<img src="{{site.url}}/img/carrot.png" style="width:15px;height:15px;margin-top: -5px">
+				<div class="navContent">list 1</div>
+				<div class="navContent">list 2</div>
+				<div class="navContent">list 3</div>
+			</div>
+			<div id="IP"><small>Today's Date: {{site.time | date:"%b %d, %Y"}}</small></div>
+			<div style="margin-top: 10px">Other awesome site:</div>
+			<div><a style="color:green" href="http://www.yuxuyong.com">鱼先森的美国日记</a></div>
+		</div>
+	</div>
+	
