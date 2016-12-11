@@ -11,8 +11,15 @@
 		</div>
 		<!--banner nav-->
 		<div id="bannerNav" class="bannerNav">
-		<a href="" class="navOption" style="color: white">option 1</a>
-		<a href="" class="navOption" style="color: white">option 2</a>
+		<a href="" class="navOption" style="color: white">Recent</a>
+		<span>|</span>
+		<a href="" class="navOption" style="color: white">Archive</a>
+		<span>|</span>
+		<a href="" class="navOption" style="color: white">About</a>
+		<span>|</span>
+		<a href="" class="navOption" style="color: white">Tools</a>
+		<span>|</span>
+		<a href="" class="navOption" style="color: white">Contact</a>
 		</div>
 	</div>
 
@@ -71,6 +78,7 @@
 		position: relative;
 		padding-top: 20px;
 		z-index: 999;
+		transition-duration: 3s;
 	}
 
 	.bannerTitle{
@@ -94,8 +102,9 @@
 		position:relative;
 		width:100%;
 		height: 20px;
-		background: #006600;
+		background: green;
 		color: white;
+		padding-bottom: 5px;
 	}
 
 	.navOption{
@@ -149,12 +158,17 @@ alert("Currently Under Construction");
 			document.getElementById("nav").style.top="0px";
 			document.getElementById("bannerNav").style.position="fixed";
 			document.getElementById("bannerNav").style.top="0px";
+			document.getElementById("bannerNav").style.background="green";
+			document.getElementById("bannerNav").style.opacity="0.8";
 			document.getElementById("buttonTop").style.display="inline";
 		} else {
 			document.getElementById("nav").style.position="absolute";
 			document.getElementById("nav").style.top="80px";
 			document.getElementById("bannerNav").style.position="absolute";
 			document.getElementById("bannerNav").style.top="80px";
+			document.getElementById("bannerNav").style.background="green";
+			document.getElementById("bannerNav").style.opacity="1";
+
 			document.getElementById("buttonTop").style.display="none";
 		}
 	}

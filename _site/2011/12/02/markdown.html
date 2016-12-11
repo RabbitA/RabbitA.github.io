@@ -19,9 +19,32 @@
 	
 <body>
 	<div style="position:relative;text-align:center;border-bottom:1px solid #d3d1d3">
-		<header id="header" style="background:#006600;height:80px">
-	<a id="Goto1"></a><!--锚定点-->
-	<div><a href="/index.html" class="headerText" ><h1 id="siteTitle" style="position:relative;padding-top:20px;color:white">RabbitA's Blog &#9731;</h1></a></div>
+		<header id="header">
+
+	<!--锚定点-->
+	<a id="Goto1"></a>
+
+	<!--banner-->
+	<div id="banner" class="banner">
+		<!--banner text-->
+		<div class="bannerTitle">
+			<a href="/index.html" class="headerText" style="color: white"><h1 id="siteTitle">RabbitA's Blog &#9731;</h1></a>
+		</div>
+		<!--banner nav-->
+		<div id="bannerNav" class="bannerNav">
+		<a href="" class="navOption" style="color: white">Recent</a>
+		<span>|</span>
+		<a href="" class="navOption" style="color: white">Archive</a>
+		<span>|</span>
+		<a href="" class="navOption" style="color: white">About</a>
+		<span>|</span>
+		<a href="" class="navOption" style="color: white">Tools</a>
+		<span>|</span>
+		<a href="" class="navOption" style="color: white">Contact</a>
+		</div>
+	</div>
+
+	<!--nav box-->
 	<div id="nav" style="position:absolute;width:21%;top:80px;background:#f1f1f1;border:1px solid #d3d1d3;border-top:0px solid #d3d1d3;height:100vh;z-index: 1">
 
 		<div id="navBox" style="background: #f1f1f1;margin-right:2%;margin-top:0px;margin-left:2%;border-radius: 5px;border:1px none #66cc66">
@@ -62,12 +85,13 @@
 				<div class="navContent">list 2</div>
 				<div class="navContent">list 3</div>
 			</div>
-			<div id="IP"><small>Today's Date: Sep 26, 2016</small></div>
+			<div id="IP"><small>Today's Date: Dec 11, 2016</small></div>
 			<div style="margin-top: 10px">Other awesome site:</div>
 			<div><a style="color:green" href="http://www.yuxuyong.com">鱼先森的美国日记</a></div>
 		</div>
 	</div>
 
+	<!--buttun to top-->
 	<div id="buttonTop" style="position:fixed;bottom:5%;right:2%;width:100px;height:100px;display:none;z-index: 20;"> <!--回到顶上的小圆点按钮-->
 		<div>
 			<img src="/img/carrot_1.png" onclick="RunmoveUp()" style="opacity: 0.8;width:100%;height: 100%">
@@ -75,9 +99,50 @@
 	</div>
 
 <style type="text/css">
-	.headerText:hover{
-		text-decoration: none;
+
+	.banner{
+		background:#006600;
+		height:80px;
+		width:100%;
+		position: relative;
+		padding-top: 20px;
+		z-index: 999;
+		transition-duration: 3s;
 	}
+
+	.bannerTitle{
+		color: red;
+	}
+
+	.headerText{
+		color:blue;
+	}
+
+	.headerText:link{
+		color:white;
+	}
+
+	.headerText:hover{
+		text-decoration:none;
+		color:yellow;
+	}
+
+	.bannerNav{
+		position:relative;
+		width:100%;
+		height: 20px;
+		background: green;
+		color: white;
+		padding-bottom: 5px;
+	}
+
+	.navOption{
+		color:white;
+	}
+	.navOption:hover{
+		color:yellow;
+	}
+
 	.navLink{
 		position: relative;
 		height: 25px;
@@ -120,10 +185,19 @@ alert("Currently Under Construction");
 		if(document.body.scrollTop>80){
 			document.getElementById("nav").style.position="fixed";
 			document.getElementById("nav").style.top="0px";
+			document.getElementById("bannerNav").style.position="fixed";
+			document.getElementById("bannerNav").style.top="0px";
+			document.getElementById("bannerNav").style.background="green";
+			document.getElementById("bannerNav").style.opacity="0.8";
 			document.getElementById("buttonTop").style.display="inline";
 		} else {
 			document.getElementById("nav").style.position="absolute";
 			document.getElementById("nav").style.top="80px";
+			document.getElementById("bannerNav").style.position="absolute";
+			document.getElementById("bannerNav").style.top="80px";
+			document.getElementById("bannerNav").style.background="green";
+			document.getElementById("bannerNav").style.opacity="1";
+
 			document.getElementById("buttonTop").style.display="none";
 		}
 	}
