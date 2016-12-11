@@ -177,12 +177,21 @@ alert("Currently Under Construction");
 	window.onscroll=function(){
 		navPosition();
 		test();
+		//sameHeight();
 	}
 	window.onload=function(){
 		imgWH();
+		//sameHeight();
 	}
-		window.onresize=function(){
+	window.onresize=function(){
 		imgWH();
+	}
+</script>
+
+<script type="text/javascript"> //side和page一样高度
+	function sameHeight(){
+		var a=document.getElementById("right").style.height;
+		document.getElementById("left").style.height=var a;
 	}
 </script>
 
@@ -316,7 +325,7 @@ function RunmoveUp(){
 		</div>
 
 		<div style="margin-top:40px">
-			<div style="position:relative;float: left;width:20%;background:red;">
+			<div style="position:relative;float: left;width:20%;background:red;" id="left">
 					<!--nav box-->
 	<div id="sideNav" style="width:98%;background:#f1f1f1;border:1px solid #d3d1d3;border-top:0px solid #d3d1d3;z-index: 1;text-align: center;">
 
@@ -366,7 +375,7 @@ function RunmoveUp(){
 	
 
 			</div>
-			<div style="position:relative;margin-left: 21%;min-height:calc(100vh);">
+			<div style="position:relative;margin-left: 21%;min-height:calc(100vh);" id="right">
 				<div id="body" class="body">
 		<div id="windowBox" style="background:white;width:100%;height:600px">
 	<div id="imgBox" style="background:red;width:40%;height:100%;margin-left:3%;border-radius:5px;border:1px solid black;float:left">

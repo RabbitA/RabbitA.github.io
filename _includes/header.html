@@ -155,12 +155,21 @@ alert("Currently Under Construction");
 	window.onscroll=function(){
 		navPosition();
 		test();
+		//sameHeight();
 	}
 	window.onload=function(){
 		imgWH();
+		//sameHeight();
 	}
-		window.onresize=function(){
+	window.onresize=function(){
 		imgWH();
+	}
+</script>
+
+<script type="text/javascript"> //side和page一样高度
+	function sameHeight(){
+		var a=document.getElementById("right").style.height;
+		document.getElementById("left").style.height=var a;
 	}
 </script>
 
