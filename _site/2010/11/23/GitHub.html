@@ -19,7 +19,7 @@
 	
 <body>
 	<div style="">
-		<div style="position:relative;text-align:center;border-bottom:1px solid #d3d1d3">
+		<div style="position:relative;text-align:center">
 			<header id="header">
 
 	<!--锚定点-->
@@ -27,10 +27,15 @@
 
 	<!--banner-->
 	<div id="banner" class="banner">
-		<!--banner text-->
-		<div class="bannerTitle">
-			<a href="/index.html" class="headerText" style="color: white;"><h1 id="siteTitle">RabbitA's Blog &#9731;</h1></a>
+		<!--banner box-->
+		<div class="bannerTitleBox">
+			<br/>
+			<!--banner text-->
+			<div class="bannerTitleText">
+				<a href="/index.html" class="headerText" style="color: white;"><h1 id="siteTitle">RabbitA's Blog &#9731;</h1></a>
+			</div>
 		</div>
+
 		<!--banner nav-->
 		<div id="bannerNav" class="bannerNav">
 		<a href="/index.html" class="navOption" style="color: white">Recent</a>
@@ -58,15 +63,20 @@
 
 	.banner{
 		width:100%;
-		position: relative;
 		z-index: 999;
+		height: 100px;
+		background: yellow;
 	}
 
-	.bannerTitle{	
+	.bannerTitleBox{
+		height: 85px;
+		background: #006600;
+	}
+	.bannerTitleText{	
 		background:#006600;
 		color: red;
-		padding-top: 18px;
-		height: 70px;
+		height: 30px;
+		padding-bottom: 30px;
 	}
 
 	.headerText{
@@ -89,6 +99,7 @@
 		background: green;
 		color: white;
 		padding-bottom: 5px;
+		z-index: 999;
 	}
 
 	.navOption{
@@ -155,7 +166,6 @@ alert("Currently Under Construction");
 			document.getElementById("bannerNav").style.top="80px";
 			document.getElementById("bannerNav").style.background="green";
 			document.getElementById("bannerNav").style.opacity="1";
-
 			document.getElementById("buttonTop").style.display="none";
 		}
 	}
@@ -305,10 +315,10 @@ function RunmoveUp(){
 </header>
 		</div>
 
-		<div>
-			<div style="width:20%;height:100%;margin-top:25px;background: #f1f1f1;">
+		<div style="margin-top:40px">
+			<div style="position:relative;float: left;width:20%;background:red;">
 					<!--nav box-->
-	<div id="sideNav" style="position:absolute;width:21%;top:80px;background:#f1f1f1;border:1px solid #d3d1d3;border-top:0px solid #d3d1d3;z-index: 1;text-align: center;">
+	<div id="sideNav" style="width:98%;background:#f1f1f1;border:1px solid #d3d1d3;border-top:0px solid #d3d1d3;z-index: 1;text-align: center;">
 
 		<div id="navBox" style="background: #f1f1f1;margin-right:2%;margin-top:0px;margin-left:2%;border-radius: 5px;border:1px none #66cc66">
 			<div style="display:block;border:0px solid red;">
@@ -356,7 +366,7 @@ function RunmoveUp(){
 	
 
 			</div>
-			<div style="margin-left: 21%;margin-top:25px;min-height:calc(100vh);">
+			<div style="position:relative;margin-left: 21%;min-height:calc(100vh);">
 				<div id="body" class="body">
 		<div style="text-align: justify;border:1px solid #66cc66;border-radius: 5px">
 <div style="background: #f1f1f1;border-radius: 5px 5px 0 0">
