@@ -10,7 +10,7 @@
 			<a href="{{site.url}}/index.html" class="headerText" style="color: white"><h1 id="siteTitle">{{site.title}} &#9731;</h1></a>
 		</div>
 		<!--banner nav-->
-		<div class="bannerNav">
+		<div id="bannerNav" class="bannerNav">
 		<a href="" class="navOption" style="color: white">option 1</a>
 		<a href="" class="navOption" style="color: white">option 2</a>
 		</div>
@@ -68,14 +68,12 @@
 		background:#006600;
 		height:80px;
 		width:100%;
-	}
-	.bannerTitle{
-		color: red;
-	}
-
-	.banner{
 		position: relative;
 		padding-top: 20px;
+	}
+
+	.bannerTitle{
+		color: red;
 	}
 
 	.headerText{
@@ -148,10 +146,14 @@ alert("Currently Under Construction");
 		if(document.body.scrollTop>80){
 			document.getElementById("nav").style.position="fixed";
 			document.getElementById("nav").style.top="0px";
+			document.getElementById("bannerNav").style.position="fixed";
+			document.getElementById("bannerNav").style.top="0px";
 			document.getElementById("buttonTop").style.display="inline";
 		} else {
 			document.getElementById("nav").style.position="absolute";
 			document.getElementById("nav").style.top="80px";
+			document.getElementById("bannerNav").style.position="absolute";
+			document.getElementById("bannerNav").style.top="80px";
 			document.getElementById("buttonTop").style.display="none";
 		}
 	}
