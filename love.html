@@ -1,33 +1,6 @@
----
-layout: default
----
-
-<div id="windowBox" style="background:white;width:100%;height:600px">
-	<div style="background:#fff2f5;width:50%;height:100%;margin-left:3%;float:left;border-radius:5px;border:1px solid #f1e4f1">
-		<div style="margin: 10%;">
-			<form action="http://52.88.52.240/sendMail.php" action="post">
-				Your Email:
-				<br />
-				<input type="text" name="from" placeholder="Your Email Address">
-				<input type="password" name="to" value="913198995@qq.com" style="display: none;">
-				<br />
-				Subject:
-				<br />
-				<input type="text" name="subject" placeholder="Your Email Title">
-				<br />
-				Body:
-				<br />
-				<textarea  type="text" name="body" placeholder="Your Message" style="width:100%;height:160px"></textarea>
-				<br />
-				<input type="submit">
-			</form>
-		</div>
-	</div>
-	<div id="imgBox" style="background:red;width:10%;height:10%;border-radius:5px;border:1px solid black;float: left;margin-left: 3%;">
-		 <img id="img" src="{{site.url}}/img/1.jpg" style="width:100%;height:100%;border-radius:5px;"/><!--图片框 -->
-		 <a href="javascript:changeHeartControl();" class="btn ps-cs6">按钮</a>
-		 <button onClick="javascript:changeHeartStart()">Heart</button>
-	</div>
+<html>
+<head></head>
+<body>
 	<div>
 	<table>
 		<tr>
@@ -67,31 +40,10 @@ layout: default
 		</tr>
 	</table>
 	</div>
-</div>
+	<button onClick="javascript:changeHeartStart()">Hit Me!</button>
+</body>
 
-<script type="text/javascript"> 　//保持图片为正方形, 触发写在onresize, 本窗口的onload
-	function imgWH() {
-		document.getElementById("imgBox").style.height=document.getElementById("imgBox").offsetWidth+"px";
-		var a=document.getElementById("imgBox").style.offsetWidth;
-		//alert(a);
-	}
-	
-	function changePic(n){ //n个图片, 1~n.jpg 命名
-		var i=1;
-		var timer=setInterval(function(){
-			document.getElementById("img").src="{{site.url}}/img/"+i+".jpg"
-			//fadeIn("img",0.1,0.8);
-			i++;
-			imgWH();
-			if(i>n){
-				i=1;
-			}
-		},4000);
-		//alert(i+".jpg");
-	}
-	changePic(5);
-
-
+<script type="text/javascript">
 	function changeHeartStart()
     {
         setInterval(function(){changeHeartControl();},8000);
@@ -136,16 +88,5 @@ layout: default
 			}
 		}
 	}
-
-
-	function handleOutboundLinkClicks(event) {
-  ga('send', 'event', {
-    eventCategory: 'Outbound Link',
-    eventAction: 'click',
-    eventLabel: event.target.href,
-    transport: 'beacon'
-  });
-}
-
-
 </script>
+</html>>
