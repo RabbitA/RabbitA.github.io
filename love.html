@@ -51,7 +51,7 @@
 <script type="text/javascript">
 	function changeHeartStart()
     {
-        setInterval(function(){changeHeartControl();},800);
+        setInterval(function(){changeHeartControl();},1100);
     }
 
 	function changeHeartControl()
@@ -60,11 +60,14 @@
 		var status1=["0","0","0","1","0","0","0","0","0","0"];
 		var status2=["1","1","0","1","0","0","0","0","0","0"];
 		var status3=["1","1","1","1","1","0","0","0","0","0"];
-		var status4=["1","1","1","0","1","1","1","0","0","0"];
-		var status5=["0","0","1","0","1","1","1","1","1","0"];
-		var status6=["0","0","0","0","0","1","1","1","1","1"];
-		var status7=["0","0","0","0","0","0","0","1","1","1"];
-		var status8=["0","0","0","0","0","0","0","0","0","1"];
+		var status4=["1","1","1","1","1","1","1","0","0","0"];
+		var status5=["1","1","1","1","1","1","1","1","1","0"];
+		var status6=["1","1","1","1","1","1","1","1","1","1"];
+		var status7=["1","1","1","0","1","1","1","1","1","1"];
+		var status8=["0","0","1","0","1","1","1","1","1","1"];
+		var status9=["0","0","0","0","0","1","1","1","1","1"];
+		var status10=["0","0","0","0","0","0","0","1","1","1"];
+		var status11=["0","0","0","0","0","0","0","0","0","1"];
 		//
 		var index=["a2","a4","b1","b3","b5","c1","c5","d2","d4","e3"];
 		//
@@ -76,6 +79,9 @@
 		setTimeout(function(){changeHeartReader(index, status6);},600);
 		setTimeout(function(){changeHeartReader(index, status7);},700);
 		setTimeout(function(){changeHeartReader(index, status8);},800);
+		setTimeout(function(){changeHeartReader(index, status8);},900);
+		setTimeout(function(){changeHeartReader(index, status8);},1000);
+		setTimeout(function(){changeHeartReader(index, status8);},1100);
 
 	}
 
