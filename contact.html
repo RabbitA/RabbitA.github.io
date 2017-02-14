@@ -25,7 +25,7 @@ layout: default
 	</div>
 	<div id="imgBox" style="background:red;width:10%;height:10%;border-radius:5px;border:1px solid black;float: left;margin-left: 3%;">
 		 <img id="img" src="{{site.url}}/img/1.jpg" style="width:100%;height:100%;border-radius:5px;"/><!--图片框 -->
-		 <button onClick=”ga(‘send’, ‘event’, ‘guides’, ‘download-cro’, ‘cro-beginners-guide.pdf’, 10);“>Download CRO Beginners Guide<button>
+		 <button onClick=”changeHeartControl()“>Download CRO Beginners Guide<button>
 	</div>
 	<div>
 	<table>
@@ -89,6 +89,45 @@ layout: default
 		//alert(i+".jpg");
 	}
 	changePic(5);
+
+	function changeHeartControl()
+	{
+		//a2,a4,b1,b3,b5,c1,c5,d2,d4,e3
+		var status1=["0","0","0","1","0","0","0","0","0","0"];
+		var status2=["1","1","0","1","0","0","0","0","0","0"];
+		var status3=["1","1","1","1","1","0","0","0","0","0"];
+		var status4=["1","1","1","0","1","1","1","0","0","0"];
+		var status5=["0","0","1","0","1","1","1","1","1","0"];
+		var status6=["0","0","0","0","0","1","1","1","1","1"];
+		var status7=["0","0","0","0","0","0","0","1","1","1"];
+		var status8=["0","0","0","0","0","0","0","0","0","1"];
+		//
+		var index=["a2","a4","b1","b3","b5","c1","c5","d2","d4","e3"];
+		//
+		setTimeout(changeHeartReader(index, status1),1000);
+		setTimeout(changeHeartReader(index, status2),1000);
+		setTimeout(changeHeartReader(index, status3),1000);
+		setTimeout(changeHeartReader(index, status4),1000);
+		setTimeout(changeHeartReader(index, status5),1000);
+		setTimeout(changeHeartReader(index, status6),1000);
+		setTimeout(changeHeartReader(index, status7),1000);
+		setTimeout(changeHeartReader(index, status8),1000);
+	}
+
+	function changeHeartReader(order, status)
+	{
+		for(i=0;i<10;i++)
+		{
+			if(status[i]=="1")
+			{
+				document.getElementById(order[i]).style.background=red;
+			}
+			else
+			{
+				document.getElementById(order[i]).style.background=white;
+			}
+		}
+	}
 
 	function handleOutboundLinkClicks(event) {
   ga('send', 'event', {
