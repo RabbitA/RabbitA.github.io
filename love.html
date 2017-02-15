@@ -3,10 +3,10 @@
 	<style>
 		.unitActive{background: red; color:black; width: 100%; height: 100%;}
 		.unitDefault{background: grey; color:black; width: 100%; height: 100%;}
-		.unitDefault:hover{background: pink	;}
+		.unitDefault:hover{background: black;}
 	</style>
 </head>
-<body onload="keepDivInCenterScreen();changeHeartStart();">
+<body onload="keepDivInCenterScreen();changeHeartStart();" style="background: black;">
 	<div id="mainDiv">
 	<table id="mainTable">
 		<tr>
@@ -54,7 +54,7 @@
 	//level 1 dependence: none
 	function keepDivInCenterScreen() 
 	{	
-		document.getElementById("mainDiv").style.background="pink";
+		document.getElementById("mainDiv").style.background="black";
 		//Screen width > Screen height
 		if(document.body.offsetWidth>document.body.offsetHeight)
 		{		
