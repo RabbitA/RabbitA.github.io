@@ -1,39 +1,78 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <canvas id="myCanvas" width="360" height="450" style="border:1px solid #d3d3d3;">
-    </canvas>
-    <script>
-      function deviceOrientationListener(event) {
-        var c = document.getElementById("myCanvas");
-        var ctx = c.getContext("2d");
+    <div class="main">
+  <h2>Device Orientation</h2>
+  <table>
+    <tr>
+      <td>Event Supported</td>
+      <td id="doEvent"></td>
+    </tr>
+    <tr>
+      <td>Tilt Left/Right [gamma]</td>
+      <td id="doTiltLR"></td>
+    </tr>
+    <tr>
+      <td>Tilt Front/Back [beta]</td>
+      <td id="doTiltFB"></td>
+    </tr>
+    <tr>
+      <td>Direction [alpha]</td>
+      <td id="doDirection"></td>
+    </tr>
+   </table>
+</div>
 
-        ctx.clearRect(0, 0, c.width, c.height);
-        ctx.fillStyle = "#FF7777";
-        ctx.font = "14px Verdana";
-        ctx.fillText("Alpha: " + Math.Round(event.alpha), 10, 20);
-        ctx.beginPath();
-        ctx.moveTo(180, 75);
-        ctx.lineTo(210, 75);
-        ctx.arc(180, 75, 60, 0, event.alpha * Math.PI / 180);
-        ctx.fill();
-
-        ctx.fillStyle = "#FF6600";
-        ctx.fillText("Beta: " + Math.round(event.beta), 10, 140);
-        ctx.beginPath();
-        ctx.fillRect(180, 150, event.beta, 90);
-
-        ctx.fillStyle = "#FF0000";
-        ctx.fillText("Gamma: " + Math.round(event.gamma), 10, 270);
-        ctx.beginPath();
-        ctx.fillRect(90, 340, 180, event.gamma);
-      }
-
-      if (window.DeviceOrientationEvent) {
-        window.addEventListener("deviceorientation", deviceOrientationListener);
-      } else {
-        alert("Sorry, your browser doesn't support Device Orientation");
-      }
-    </script>
+<div class="container" style="perspective: 300;">
+  <img src="html5_logo.png" id="imgLogo" class="logo">
+</div>
+    
+    
+    
+    
+    
   </body>
+  <script>
+    if (window.DeviceOrientationEvent) {
+  // Listen for the event and handle DeviceOrientationEvent object
+  window.addEventListener('deviceorientation', devOrientHandler, false);
+}
+    if (window.DeviceOrientationEvent) {
+  document.getElementById("doEvent").innerHTML = "DeviceOrientation";
+  // Listen for the deviceorientation event and handle the raw data
+  window.addEventListener('deviceorientation', function(eventData) {
+    // gamma is the left-to-right tilt in degrees, where right is positive
+    var tiltLR = eventData.gamma;
+
+    // beta is the front-to-back tilt in degrees, where front is positive
+    var tiltFB = eventData.beta;
+
+    // alpha is the compass direction the device is facing in degrees
+    var dir = eventData.alpha
+
+    // call our orientation event handler
+    deviceOrientationHandler(tiltLR, tiltFB, dir);
+  }, false);
+} else {
+  document.getElementById("doEvent").innerHTML = "Not supported."
+}
+    
+    
+    document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
+document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
+document.getElementById("doDirection").innerHTML = Math.round(dir);
+
+// Apply the transform to the image
+var logo = document.getElementById("imgLogo");
+logo.style.webkitTransform =
+  "rotate("+ tiltLR +"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
+logo.style.MozTransform = "rotate("+ tiltLR +"deg)";
+logo.style.transform =
+  "rotate("+ tiltLR +"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
+    
+    
+    
+    
+    
+  </script>
 </html>
