@@ -1,57 +1,60 @@
 <html>
 <head>
 	<style>
-		.unitSize{background: red; color:black; width: 100%; height: 100%;}
-		.unitSizeDefault{background: grey; color:black; width: 100%; height: 100%;}
+		.unitActive{background: red; color:black; width: 100%; height: 100%;}
+		.unitDefault{background: grey; color:black; width: 100%; height: 100%;}
+		.unitDefault:hover{background: pink	;}
 	</style>
 </head>
-<body onload="keepDivInCenterScreen()">
+<body onload="keepDivInCenterScreen();changeHeartStart();">
 	<div id="mainDiv">
 	<table id="mainTable">
 		<tr>
-			<td><div id="a1" class="unitSizeDefault"></div></td>
-			<td><div id="a2" class="unitSizeDefault"></div></td>
-			<td><div id="a3" class="unitSizeDefault"></div></td>
-			<td><div id="a4" class="unitSizeDefault"></div></td>
-			<td><div id="a5" class="unitSizeDefault"></div></td>
+			<td><div id="a1" class="unitDefault"></div></td>
+			<td><div id="a2" class="unitDefault"></div></td>
+			<td><div id="a3" class="unitDefault"></div></td>
+			<td><div id="a4" class="unitDefault"></div></td>
+			<td><div id="a5" class="unitDefault"></div></td>
 		</tr>
 		<tr>
-			<td><div id="b1" class="unitSizeDefault"></div></td>
-			<td><div id="b2" class="unitSizeDefault"></div></td>
-			<td><div id="b3" class="unitSizeDefault"></div></td>
-			<td><div id="b4" class="unitSizeDefault"></div></td>
-			<td><div id="b5" class="unitSizeDefault"></div></td>
+			<td><div id="b1" class="unitDefault"></div></td>
+			<td><div id="b2" class="unitDefault"></div></td>
+			<td><div id="b3" class="unitDefault"></div></td>
+			<td><div id="b4" class="unitDefault"></div></td>
+			<td><div id="b5" class="unitDefault"></div></td>
 		</tr>
 		<tr>
-			<td><div id="c1" class="unitSizeDefault"></div></td>
-			<td><div id="c2" class="unitSizeDefault"></div></td>
-			<td><div id="c3" class="unitSizeDefault"></div></td>
-			<td><div id="c4" class="unitSizeDefault"></div></td>
-			<td><div id="c5" class="unitSizeDefault"></div></td>
+			<td><div id="c1" class="unitDefault"></div></td>
+			<td><div id="c2" class="unitDefault"></div></td>
+			<td><div id="c3" class="unitDefault"></div></td>
+			<td><div id="c4" class="unitDefault"></div></td>
+			<td><div id="c5" class="unitDefault"></div></td>
 		</tr>
 		<tr>
-			<td><div id="d1" class="unitSizeDefault"></div></td>
-			<td><div id="d2" class="unitSizeDefault"></div></td>
-			<td><div id="d3" class="unitSizeDefault"></div></td>
-			<td><div id="d4" class="unitSizeDefault"></div></td>
-			<td><div id="d5" class="unitSizeDefault"></div></td>
+			<td><div id="d1" class="unitDefault"></div></td>
+			<td><div id="d2" class="unitDefault"></div></td>
+			<td><div id="d3" class="unitDefault"></div></td>
+			<td><div id="d4" class="unitDefault"></div></td>
+			<td><div id="d5" class="unitDefault"></div></td>
 		</tr>
 		<tr>
-			<td><div id="e1" class="unitSizeDefault"></div></td>
-			<td><div id="e2" class="unitSizeDefault"></div></td>
-			<td><div id="e3" class="unitSizeDefault"></div></td>
-			<td><div id="e4" class="unitSizeDefault"></div></td>
-			<td><div id="e5" class="unitSizeDefault"></div></td>
+			<td><div id="e1" class="unitDefault"></div></td>
+			<td><div id="e2" class="unitDefault"></div></td>
+			<td><div id="e3" class="unitDefault"></div></td>
+			<td><div id="e4" class="unitDefault"></div></td>
+			<td><div id="e5" class="unitDefault"></div></td>
 		</tr>
 	</table>
 	</div>
-	<button onClick="javascript:changeHeartStart()">Hit Me!</button>
+	<!--<button onClick="javascript:changeHeartStart()">Hit Me!</button>-->
 </body>
 
 <script type="text/javascript">
+
+	//level 1 dependence: none
 	function keepDivInCenterScreen() 
 	{	
-		document.getElementById("mainDiv").style.background="green";
+		document.getElementById("mainDiv").style.background="pink";
 		//Screen width > Screen height
 		if(document.body.offsetWidth>document.body.offsetHeight)
 		{		
@@ -71,11 +74,15 @@
 		}
 	}
 
+	//level 3 dependence: changeHeartControl()
+	//start heart shape drawing
 	function changeHeartStart()
     {
         setInterval(function(){changeHeartControl();},1100);
     }
 
+    //level 2 dependence: unitReader()
+    //heart shape dots and time interval
 	function changeHeartControl()
 	{
 		//a2,a4,b1,b3,b5,c1,c5,d2,d4,e3
@@ -93,33 +100,34 @@
 		//
 		var index=["a2","a4","b1","b3","b5","c1","c5","d2","d4","e3"];
 		//
-		setTimeout(function(){changeHeartReader(index, status1);},100);
-		setTimeout(function(){changeHeartReader(index, status2);},200);
-		setTimeout(function(){changeHeartReader(index, status3);},300);
-		setTimeout(function(){changeHeartReader(index, status4);},400);;
-		setTimeout(function(){changeHeartReader(index, status5);},500);
-		setTimeout(function(){changeHeartReader(index, status6);},600);
-		setTimeout(function(){changeHeartReader(index, status7);},700);
-		setTimeout(function(){changeHeartReader(index, status8);},800);
-		setTimeout(function(){changeHeartReader(index, status9);},900);
-		setTimeout(function(){changeHeartReader(index, status10);},1000);
-		setTimeout(function(){changeHeartReader(index, status11);},1100);
-
+		setTimeout(function(){unitReader(index, status1);},100);
+		setTimeout(function(){unitReader(index, status2);},200);
+		setTimeout(function(){unitReader(index, status3);},300);
+		setTimeout(function(){unitReader(index, status4);},400);;
+		setTimeout(function(){unitReader(index, status5);},500);
+		setTimeout(function(){unitReader(index, status6);},600);
+		setTimeout(function(){unitReader(index, status7);},700);
+		setTimeout(function(){unitReader(index, status8);},800);
+		setTimeout(function(){unitReader(index, status9);},900);
+		setTimeout(function(){unitReader(index, status10);},1000);
+		setTimeout(function(){unitReader(index, status11);},1100);
 	}
 
-	function changeHeartReader(order, status)
+	//level 1 dependence: none
+	//unit reader
+	function unitReader(order, status)
 	{
 		for(i=0;i<10;i++)
 		{
 			if(status[i]=="1")
 			{
 				//document.getElementById(order[i]).style.background="red";
-				document.getElementById(order[i]).className="unitSize";
+				document.getElementById(order[i]).className="unitActive";
 			}
 			else
 			{
 				//document.getElementById(order[i]).style.background="white";
-				document.getElementById(order[i]).className="unitSizeDefault";
+				document.getElementById(order[i]).className="unitDefault";
 			}
 		}
 	}
