@@ -1,13 +1,13 @@
 <html>
 <head>
 	<style>
-		.unitSize{background: red; color:black; width: 50px; height: 50px;}
-		.unitSizeDefault{background: grey; color:black; width: 50px; height: 50px;}
+		.unitSize{background: red; color:black; width: 100%; height: 100%;}
+		.unitSizeDefault{background: grey; color:black; width: 100%; height: 100%;}
 	</style>
 </head>
-<body>
-	<div>
-	<table>
+<body onload="keepDivInCenterScreen()">
+	<div id="mainDiv">
+	<table id="mainTable">
 		<tr>
 			<td><div id="a1" class="unitSizeDefault"></div></td>
 			<td><div id="a2" class="unitSizeDefault"></div></td>
@@ -49,6 +49,25 @@
 </body>
 
 <script type="text/javascript">
+	function keepDivInCenterScreen() 
+	{		
+		//Screen width > Screen height
+		if(document.body.offsetWidth>document.body.offsetHeight)
+		{		document.getElementById("mainDiv").style.background="green";
+			document.getElementById("mainDiv").style.height=document.body.offsetHeight;
+			document.getElementById("mainDiv").style.width=document.body.offsetHeight;
+			document.getElementById("mainTable").style.height="100%";
+			document.getElementById("mainTable").style.width="100%";
+		} 
+		else //Screen width < Screen height
+		{		
+			document.getElementById("mainDiv").style.height=document.body.offsetWidth;
+			document.getElementById("mainDiv").style.width=document.body.offsetWidth;
+			document.getElementById("mainTable").style.height="100%";
+			document.getElementById("mainTable").style.width="100%";
+		}
+	}
+
 	function changeHeartStart()
     {
         setInterval(function(){changeHeartControl();},1100);
