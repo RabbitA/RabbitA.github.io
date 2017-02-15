@@ -50,14 +50,16 @@
 
 <script type="text/javascript">
 	function keepDivInCenterScreen() 
-	{		
+	{	
+		document.getElementById("mainDiv").style.background="green";
 		//Screen width > Screen height
 		if(document.body.offsetWidth>document.body.offsetHeight)
-		{		document.getElementById("mainDiv").style.background="green";
+		{		
 			document.getElementById("mainDiv").style.height=document.body.offsetHeight;
 			document.getElementById("mainDiv").style.width=document.body.offsetHeight;
 			document.getElementById("mainTable").style.height="100%";
 			document.getElementById("mainTable").style.width="100%";
+			document.getElementById("mainDiv").style.marginLeft=(document.body.offsetWidth-document.body.offsetHeight)/2;
 		} 
 		else //Screen width < Screen height
 		{		
@@ -65,6 +67,7 @@
 			document.getElementById("mainDiv").style.width=document.body.offsetWidth;
 			document.getElementById("mainTable").style.height="100%";
 			document.getElementById("mainTable").style.width="100%";
+			document.getElementById("mainDiv").style.marginTop=(document.body.offsetHeight-document.body.offsetWidth)/2;
 		}
 	}
 
