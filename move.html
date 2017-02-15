@@ -34,10 +34,6 @@
   </body>
   <script>
     if (window.DeviceOrientationEvent) {
-  // Listen for the event and handle DeviceOrientationEvent object
-  window.addEventListener('deviceorientation', devOrientHandler, false);
-}
-    if (window.DeviceOrientationEvent) {
   document.getElementById("doEvent").innerHTML = "DeviceOrientation";
   // Listen for the deviceorientation event and handle the raw data
   window.addEventListener('deviceorientation', function(eventData) {
