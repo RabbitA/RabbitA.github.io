@@ -47,21 +47,24 @@
 	</table>
 	</div>
 	<!--<button onClick="javascript:changeHeartStart()">Hit Me!</button>-->
-	<p id="acc" style="color: white"></p>
+	<p id="acc" style="color: white">nnn</p>
 </body>
 
 <script type="text/javascript">
 
 // 监听plusready事件  
-document.addEventListener( "plusready", function(){
-	// 扩展API加载完毕，现在可以正常调用扩展API
-	var acc = document.getElementById("acc");
-	plus.accelerometer.watchAcceleration( function ( a ) {
-		acc.innerText =  "x:" + a.xAxis + "\ny:" + a.yAxis + "\nz:" + a.zAxis;
-	}, function ( e ) {
-		alert( "Acceleration error: " + e.message ); 
-	} ); 
-}, false );
+if(window.DeviceMotionEvent)
+{
+	window.addEventListener('devicemotion', function()
+	{
+		var accelection=event.accelerationIncludingGravity;
+		var acc = document.getElementById("acc");
+		x=accelection.x;
+		y=accelection.y;
+		z=accelection.z;
+		acc.innerText =  "x:" + x + "\ny:" + y + "\nz:" + z
+	}
+} 
 
 	//level 1 dependence: none
 	function keepDivInCenterScreen() 
