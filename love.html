@@ -56,7 +56,11 @@
 if(window.DeviceMotionEvent)
 {
 	window.addEventListener('devicemotion', test(), false);
-} 
+}
+else
+{
+	alert("Unsupported Device");
+}
 
 function test()
 {
@@ -70,7 +74,7 @@ function test()
 
 	//level 1 dependence: none
 	function keepDivInCenterScreen() 
-	{	
+	{
 		document.getElementById("mainDiv").style.background="black";
 		//Screen width > Screen height
 		if(document.body.offsetWidth>document.body.offsetHeight)
