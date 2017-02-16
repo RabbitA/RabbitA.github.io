@@ -44,6 +44,20 @@
 			<td><div id="e4" class="unitDefault"></div></td>
 			<td><div id="e5" class="unitDefault"></div></td>
 		</tr>
+		<tr>
+			<td><div id="f1" class="unitDefault"></div></td>
+			<td><div id="f2" class="unitDefault"></div></td>
+			<td><div id="f3" class="unitDefault"></div></td>
+			<td><div id="f4" class="unitDefault"></div></td>
+			<td><div id="f5" class="unitDefault"></div></td>
+		</tr>
+		<tr>
+			<td><div id="g1" class="unitDefault"></div></td>
+			<td><div id="g2" class="unitDefault"></div></td>
+			<td><div id="g3" class="unitDefault"></div></td>
+			<td><div id="g4" class="unitDefault"></div></td>
+			<td><div id="g5" class="unitDefault"></div></td>
+		</tr>
 	</table>
 	</div>
 	<!--<button onClick="javascript:changeHeartStart()">Hit Me!</button>-->	
@@ -85,18 +99,18 @@
 		if(document.body.offsetWidth>document.body.offsetHeight)
 		{		
 			document.getElementById("mainDiv").style.height=document.body.offsetHeight;
-			document.getElementById("mainDiv").style.width=document.body.offsetHeight;
+			document.getElementById("mainDiv").style.width=document.body.offsetHeight*5/7;
 			document.getElementById("mainTable").style.height="100%";
 			document.getElementById("mainTable").style.width="100%";
-			document.getElementById("mainDiv").style.marginLeft=(document.body.offsetWidth-document.body.offsetHeight)/2;
+			document.getElementById("mainDiv").style.marginLeft=(document.body.offsetWidth-document.body.offsetHeight*5/7)/2;
 		} 
 		else //Screen width < Screen height
 		{		
-			document.getElementById("mainDiv").style.height=document.body.offsetWidth;
+			document.getElementById("mainDiv").style.height=document.body.offsetWidth*7/5;
 			document.getElementById("mainDiv").style.width=document.body.offsetWidth;
 			document.getElementById("mainTable").style.height="100%";
 			document.getElementById("mainTable").style.width="100%";
-			document.getElementById("mainDiv").style.marginTop=(document.body.offsetHeight-document.body.offsetWidth)/2;
+			document.getElementById("mainDiv").style.marginTop=(document.body.offsetHeight-document.body.offsetWidth*7/5)/2;
 		}
 	}
 
@@ -112,19 +126,19 @@
 	function changeHeartControl()
 	{
 		//a2,a4,b1,b3,b5,c1,c5,d2,d4,e3
-		var status1=["0","0","0","1","0","0","0","0","0","0"];
-		var status2=["1","1","0","1","0","0","0","0","0","0"];
-		var status3=["1","1","1","1","1","0","0","0","0","0"];
-		var status4=["1","1","1","1","1","1","1","0","0","0"];
-		var status5=["1","1","1","1","1","1","1","1","1","0"];
-		var status6=["1","1","1","1","1","1","1","1","1","1"];
-		var status7=["1","1","1","0","1","1","1","1","1","1"];
-		var status8=["0","0","1","0","1","1","1","1","1","1"];
-		var status9=["0","0","0","0","0","1","1","1","1","1"];
-		var status10=["0","0","0","0","0","0","0","1","1","1"];
-		var status11=["0","0","0","0","0","0","0","0","0","1"];
+		var status1=["0","0","0","0","0","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status2=["0","1","0","1","0","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status3=["0","1","0","1","0","1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status4=["0","1","0","1","0","1","0","1","0","1","1","0","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status5=["0","1","0","1","0","1","0","1","0","1","1","0","0","0","1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status6=["0","1","0","1","0","1","0","1","0","1","1","0","0","0","1","0","1","0","1","0","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status7=["0","1","0","1","0","1","0","0","0","1","1","0","0","0","1","0","1","0","1","0","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status8=["0","0","0","0","0","1","0","0","0","1","1","0","0","0","1","0","1","0","1","0","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status9=["0","0","0","0","0","0","0","0","0","0","1","0","0","0","1","0","1","0","1","0","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status10=["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status11=["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0"];
 		//
-		var index=["a2","a4","b1","b3","b5","c1","c5","d2","d4","e3"];
+		var index=["b1","b2","b3","b4","b5","c1","c2","c3","c4","c5","d1","d2","d3","d4","d5","e1","e2","e3","e4","e5","f1","f2","f3","f4","f5","g5","g1","g2","g3","g4","g5","a1","a2","a3","a4","a5"];
 		//
 		setTimeout(function(){unitReader(index, status1);},100);
 		setTimeout(function(){unitReader(index, status2);},200);
@@ -143,7 +157,7 @@
 	//unit reader
 	function unitReader(order, status)
 	{
-		for(i=0;i<10;i++)
+		for(i=0;i<35;i++)
 		{
 			if(status[i]=="1")
 			{
