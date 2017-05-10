@@ -60,7 +60,7 @@
 		</tr>
 	</table>
 	</div>
-	<button onClick="javascript:alphabetAStart()">Hit Me!</button>
+	<button onClick="javascript:alphabetStart()">Hit Me!</button>
 	
 	
 </body>
@@ -90,9 +90,13 @@
 	//var z=accelection.z;
 	//acc.innerText =  "x:" + x + "\ny:" + y + "\nz:" + z;
 //}
-	function alphabetAStart()
+	function alphabetStart()
 	{
-		setInterval(function(){alphabetAControl();},1000);
+		//setInterval(function(){alphabetAControl();},1000);
+		//setTimeout(function(){alphabetAControl();},1000);
+		setTimeout(function(){alphabetBControl();},1500);
+		//setTimeout(function(){alphabetCControl();},2000);
+
 	}
 
 	function alphabetAControl()
@@ -110,6 +114,76 @@
 		var status7=["1","1","0","0","0","0","0","1","0","0","0","0","1","0","0","1","1","1","0","0","0","0","1","0","0","0","0","1","0","0","0","0","1","0","0",];
 		var status8=["1","0","0","0","0","0","1","0","0","0","0","1","0","0","0","1","1","0","0","0","0","1","0","0","0","0","1","0","0","0","0","1","0","0","0",];
 		var status9=["0","0","0","0","0","1","0","0","0","0","1","0","0","0","0","1","0","0","0","0","1","0","0","0","0","1","0","0","0","0","1","0","0","0","0",];
+
+		setTimeout(function(){unitReader(index0, status0);},100);
+		setTimeout(function(){unitReader(index1, status1);},200);
+		setTimeout(function(){unitReader(index2, status2);},300);
+		setTimeout(function(){unitReader(index3, status3);},400);;
+		setTimeout(function(){unitReader(index4, status4);},500);
+		setTimeout(function(){unitReader(index5, status5);},600);
+		setTimeout(function(){unitReader(index6, status6);},700);
+		setTimeout(function(){unitReader(index7, status7);},800);
+		setTimeout(function(){unitReader(index8, status8);},900);
+		setTimeout(function(){unitReader(index9, status9);},1000);
+	}
+
+	function alphabetBControl()
+	{
+		//init, clean
+		var index0=["a5","b5","c5","d5","e5","f5","g5"];
+		var status0=["0","0","0","0","0","0","0"];
+		var index10=["a1","b1","c1","d1","e1","f1","g1"];
+		var status10=["0","0","0","0","0","0","0"];
+		//
+		var index1=["a5","b5","c5","d5","e5","f5","g5"];
+		var status1=["1","1","1","1","1","1","1"];
+		var index2=["a5","b5","c5","d5","e5","f5","g5","a4","b4","c4","d4","e4","f4","g4"];
+		var status2=["1","0","0","1","0","0","1","1","1","1","1","1","1","1"];
+		var index3=["a5","b5","c5","d5","e5","f5","g5","a4","b4","c4","d4","e4","f4","g4","a3","b3","c3","d3","e3","f3","g3"];
+		var status3=["1","0","0","1","0","0","1","1","0","0","1","0","0","1","1","1","1","1","1","1","1"];
+		var index4=["a5","b5","c5","d5","e5","f5","g5","a4","b4","c4","d4","e4","f4","g4","a3","b3","c3","d3","e3","f3","g3","a2","b2","c2","d2","e2","f2","g2"];
+		var status4=["1","0","0","1","0","0","1","1","0","0","1","0","0","1","1","0","0","1","0","0","1","1","1","1","1","1","1","1"];
+
+		var index5=["a1","a2","a3","a4","a5","b1","b2","b3","b4","b5","c1","c2","c3","c4","c5","d1","d2","d3","d4","d5","e1","e2","e3","e4","e5","f1","f2","f3","f4","f5","g1","g2","g3","g4","g5"];
+		var status5=["1","1","1","1","0","1","0","0","0","1","1","0","0","0","1","1","1","1","1","0","1","0","0","0","1","1","0","0","0","1","1","1","1","1","0",];
+		var index6=["a1","a2","a3","a4","a5","b1","b2","b3","b4","b5","c1","c2","c3","c4","c5","d1","d2","d3","d4","d5","e1","e2","e3","e4","e5","f1","f2","f3","f4","f5","g1","g2","g3","g4","g5"];
+		var status6=["1","1","1","0","0","0","0","0","1","0","0","0","0","1","0","1","1","1","0","0","0","0","0","1","0","0","0","0","1","0","1","1","1","0","0",];
+		var index7=["a1","a2","a3","a4","a5","b1","b2","b3","b4","b5","c1","c2","c3","c4","c5","d1","d2","d3","d4","d5","e1","e2","e3","e4","e5","f1","f2","f3","f4","f5","g1","g2","g3","g4","g5"];
+		var status7=["1","1","0","0","0","0","0","1","0","0","0","0","1","0","0","1","1","0","0","0","0","0","1","0","0","0","0","1","0","0","1","1","0","0","0",];
+		var index8=["a1","a2","a3","a4","a5","b1","b2","b3","b4","b5","c1","c2","c3","c4","c5","d1","d2","d3","d4","d5","e1","e2","e3","e4","e5","f1","f2","f3","f4","f5","g1","g2","g3","g4","g5"];
+		var status8=["1","0","0","0","0","0","1","0","0","0","0","1","0","0","0","1","0","0","0","0","0","1","0","0","0","0","1","0","0","0","1","0","0","0","0",];
+		var index9=["a1","a2","a3","a4","a5","b1","b2","b3","b4","b5","c1","c2","c3","c4","c5","d1","d2","d3","d4","d5","e1","e2","e3","e4","e5","f1","f2","f3","f4","f5","g1","g2","g3","g4","g5"];
+		var status9=["0","0","0","0","0","1","0","0","0","0","1","0","0","0","0","0","0","0","0","0","1","0","0","0","0","1","0","0","0","0","0","0","0","0","0",];
+
+		setTimeout(function(){unitReader(index0, status0);},0);
+		setTimeout(function(){unitReader(index1, status1);},100);
+		setTimeout(function(){unitReader(index2, status2);},200);
+		setTimeout(function(){unitReader(index3, status3);},300);;
+		setTimeout(function(){unitReader(index4, status4);},400);
+		setTimeout(function(){unitReader(index5, status5);},500);
+		setTimeout(function(){unitReader(index6, status6);},600);
+		setTimeout(function(){unitReader(index7, status7);},700);
+		setTimeout(function(){unitReader(index8, status8);},800);
+		setTimeout(function(){unitReader(index9, status9);},900);
+		setTimeout(function(){unitReader(index10, status10);},1000);
+
+	}
+
+	function alphabetCControl()
+	{
+		//
+		var index=["a1","a2","a3","a4","a5","b1","b2","b3","b4","b5","c1","c2","c3","c4","c5","d1","d2","d3","d4","d5","e1","e2","e3","e4","e5","f1","f2","f3","f4","f5","g1","g2","g3","g4","g5"];
+
+		var status0=["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"];
+		var status1=["0","0","0","0","1","0","0","0","0","1","0","0","0","0","1","0","0","0","0","1","0","0","0","0","1","0","0","0","0","1","0","0","0","0","1",];
+		var status2=["0","0","0","1","1","0","0","0","1","0","0","0","0","1","0","0","0","0","1","1","0","0","0","1","0","0","0","0","1","0","0","0","0","1","1",];
+		var status3=["0","0","1","1","1","0","0","1","0","0","0","0","1","0","0","0","0","1","1","1","0","0","1","0","0","0","0","1","0","0","0","0","1","1","1",];
+		var status4=["0","1","1","1","1","0","1","0","0","0","0","1","0","0","0","0","1","1","1","1","0","1","0","0","0","0","1","0","0","0","0","1","1","1","1",];
+		var status5=["1","1","1","1","0","1","0","0","0","1","1","0","0","0","1","1","1","1","1","0","1","0","0","0","1","1","0","0","0","1","1","1","1","1","0",];
+		var status6=["1","1","1","0","0","0","0","0","1","0","0","0","0","1","0","1","1","1","0","0","0","0","0","1","0","0","0","0","1","0","1","1","1","0","0",];
+		var status7=["1","1","0","0","0","0","0","1","0","0","0","0","1","0","0","1","1","0","0","0","0","0","1","0","0","0","0","1","0","0","1","1","0","0","0",];
+		var status8=["1","0","0","0","0","0","1","0","0","0","0","1","0","0","0","1","0","0","0","0","0","1","0","0","0","0","1","0","0","0","1","0","0","0","0",];
+		var status9=["0","0","0","0","0","1","0","0","0","0","1","0","0","0","0","0","0","0","0","0","1","0","0","0","0","1","0","0","0","0","0","0","0","0","0",];
 
 		setTimeout(function(){unitReader(index, status0);},100);
 		setTimeout(function(){unitReader(index, status1);},200);
@@ -193,12 +267,11 @@
 		{
 			if(status[i]=="1")
 			{
-				//document.getElementById(order[i]).style.background="red";
+
 				document.getElementById(order[i]).className="unitActive";
 			}
 			else
 			{
-				//document.getElementById(order[i]).style.background="white";
 				document.getElementById(order[i]).className="unitDefault";
 			}
 		}
